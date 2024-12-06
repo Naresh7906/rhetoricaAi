@@ -31,7 +31,7 @@ RUN npm install -g serve
 COPY --from=build /app/dist ./dist
 
 # Expose port 8080 (Azure Web Apps expects this)
-EXPOSE 8080
+EXPOSE ${PORT}
 
 # Start the server
 # Using PORT environment variable which Azure Web Apps will provide

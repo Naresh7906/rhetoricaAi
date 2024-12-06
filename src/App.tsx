@@ -4,6 +4,7 @@ import { Login } from "./pages/login";
 import { HRDashboard } from "./pages/hr/dashboard";
 import { EmployeeDashboard } from "./pages/employee/dashboard";
 import { CourseDetails } from "./pages/employee/course-details";
+import ChatInterface from "./pages/employee/voice-model";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         {/* Employee Routes */}
         <Route path="/employee/dashboard" element={<EmployeeDashboard />} />
         <Route path="/employee/courses/:courseId" element={<CourseDetails />} />
+        <Route path="/employee/voice-test/:courseId" element={<ChatInterface />} />
         
         {/* Default redirect */}
         <Route path="*" element={<Login />} />

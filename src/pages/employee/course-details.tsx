@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
   ChevronRight,
@@ -6,9 +6,9 @@ import {
   Play,
   MessageSquare,
   Clock,
-  BookOpen,
   Download,
   Star,
+  Mic,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -83,8 +83,13 @@ const courseData = {
 };
 
 export function CourseDetails() {
+  const navigate = useNavigate();
   const { courseId } = useParams();
   const currentChapter = courseData.chapters.find(chapter => chapter.current);
+
+  const handleStartTest = () => {
+    navigate(`/employee/voice-test/${courseId}`);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -146,6 +151,14 @@ export function CourseDetails() {
                   </Button>
                   <Button variant="outline" size="lg" className="gap-2">
                     <Star className="w-4 h-4" /> Quiz
+                  </Button>
+                  <Button 
+                    variant="default" 
+                    size="lg" 
+                    className="gap-2 bg-purple-600 hover:bg-purple-700"
+                    onClick={handleStartTest}
+                  >
+                    <Mic className="w-4 h-4" /> Start Voice Test
                   </Button>
                 </div>
                 <div className="text-sm text-muted-foreground">

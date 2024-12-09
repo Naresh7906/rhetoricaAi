@@ -22,5 +22,10 @@ jobs:
 
     - name: Build and push image
       run: |
-        docker build --build-arg PORT=${{secrets.PORT}} -t ${{ secrets.AZURE_CONTAINER_REGISTRY_NAME }}.azurecr.io/rhetorica-frontend:latest .
+        docker build \
+          --build-arg PORT=${{secrets.PORT}} \
+          --build-arg VITE_AZURE_OPENAI_API_KEY=${{secrets.VITE_AZURE_OPENAI_API_KEY}} \
+          --build-arg VITE_AZURE_OPENAI_ENDPOINT=${{secrets.VITE_AZURE_OPENAI_ENDPOINT}} \
+          --build-arg VITE_AZURE_OPENAI_DEPLOYMENT_NAME=${{secrets.VITE_AZURE_OPENAI_DEPLOYMENT_NAME}} \
+          -t ${{ secrets.AZURE_CONTAINER_REGISTRY_NAME }}.azurecr.io/rhetorica-frontend:latest .
         docker push ${{ secrets.AZURE_CONTAINER_REGISTRY_NAME }}.azurecr.io/rhetorica-frontend:latest

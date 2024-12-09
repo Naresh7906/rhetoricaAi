@@ -1,23 +1,29 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Send, Mic, MicOff, Power } from "lucide-react";
+import { Send, Mic, MicOff, Power, ChevronLeft, Mail, Bell } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Link, useNavigate } from "react-router-dom";
 import {
   RTClient,
   RTInputAudioItem,
   RTResponse,
 } from "rt-client";
 import { AudioHandler } from "@/lib/audio";
+import { Card, CardContent } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { cn } from "@/lib/utils";
 
 interface Message {
   type: "user" | "assistant" | "status";
   content: string;
 }
 
-
 const ChatInterface = () => {
+  const navigate = useNavigate();
   const [isConnected, setIsConnected] = useState(false);
   const [isConnecting, setIsConnecting] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -26,6 +32,10 @@ const ChatInterface = () => {
   const [useVAD] = useState(true);
   const clientRef = useRef<RTClient | null>(null);
   const audioHandlerRef = useRef<AudioHandler | null>(null);
+  const [backstory, setBackstory] = useState("");
+  const [showBackstory, setShowBackstory] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoAvailable, setIsVideoAvailable] = useState(false);
 
   const handleConnect = async () => {
     if (!isConnected) {
@@ -149,10 +159,14 @@ const ChatInterface = () => {
           },
         ]);
 
+        const messageContent = backstory && messages.length === 0
+          ? `[System: ${backstory}]\n\nUser: ${currentMessage}`
+          : currentMessage;
+
         await clientRef.current.sendItem({
           type: "message",
           role: "user",
-          content: [{ type: "input_text", text: currentMessage }],
+          content: [{ type: "input_text", text: messageContent }],
         });
         await clientRef.current.generateResponse();
         setCurrentMessage("");
@@ -206,76 +220,210 @@ const ChatInterface = () => {
     };
   }, []);
 
-  return (
-    <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="flex-1 flex flex-col max-w-4xl mx-auto w-full">
-        {/* Header */}
-        <div className="border-b dark:border-gray-700 bg-white dark:bg-gray-800 p-4 sticky top-0 z-10">
-          <Button
-            className="w-full max-w-xs mx-auto flex items-center justify-center gap-2"
-            variant={isConnected ? "destructive" : "default"}
-            onClick={handleConnect}
-            disabled={isConnecting}
-          >
-            <Power className="w-4 h-4" />
-            {isConnecting ? "Connecting..." : isConnected ? "Disconnect" : "Connect"}
-          </Button>
-        </div>
+  // Initialize video feed
+  useEffect(() => {
+    const startVideo = async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ 
+          video: true,
+          audio: false 
+        });
+        if (videoRef.current) {
+          videoRef.current.srcObject = stream;
+          setIsVideoAvailable(true);
+        }
+      } catch (err) {
+        console.error("Error accessing camera:", err);
+        setIsVideoAvailable(false);
+      }
+    };
 
-        {/* Messages Area */}
-        <div className="flex-1 p-4 overflow-y-auto space-y-4">
-          {messages.map((message, index) => (
-            <div
-              key={index}
-              className={`flex ${message.type === "user" ? "justify-end" : "justify-start"}`}
-            >
-              <div
-                className={`p-3 rounded-lg max-w-[80%] ${
-                  message.type === "user"
-                    ? "bg-primary text-primary-foreground rounded-br-none"
-                    : "bg-gray-200 dark:bg-gray-700 rounded-bl-none"
-                }`}
+    startVideo();
+
+    // Cleanup
+    return () => {
+      const stream = videoRef.current?.srcObject as MediaStream;
+      stream?.getTracks().forEach(track => track.stop());
+      setIsVideoAvailable(false);
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-background flex flex-col">
+      {/* Navbar */}
+      <nav className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center gap-4">
+              <Button 
+                variant="ghost" 
+                size="icon"
+                onClick={() => navigate(-1)}
+                className="hover:bg-muted"
               >
-                {message.content}
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center font-bold">
+                  R
+                </div>
+                <span className="text-xl font-semibold gradient-text">Rhetorica</span>
               </div>
             </div>
-          ))}
+
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+              <div className="flex items-center gap-2 border-l pl-3">
+                <Avatar className="h-8 w-8">
+                  <AvatarImage src="/avatar.jpg" alt="User" />
+                  <AvatarFallback>JD</AvatarFallback>
+                </Avatar>
+                <span className="text-sm font-medium">John Doe</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <div className="flex h-screen">
+        {/* Left Panel - Chat */}
+        <div className="w-[400px] border-r bg-muted/5 flex flex-col">
+          <div className="p-4 border-b bg-background">
+            <h2 className="text-lg font-semibold">Voice Training Chat</h2>
+            <p className="text-sm text-muted-foreground">Practice your communication skills</p>
+          </div>
+          
+          <div className="flex-1 flex overflow-y-auto flex-col p-4">
+            {/* Connect Button */}
+            <Button
+              className={cn(
+                "mb-4",
+                isConnected ? "bg-destructive hover:bg-destructive/90" : "gradient-bg"
+              )}
+              onClick={handleConnect}
+              disabled={isConnecting}
+            >
+              <Power className="w-4 h-4 mr-2" />
+              {isConnecting ? "Connecting..." : isConnected ? "Disconnect" : "Connect"}
+            </Button>
+
+            {/* Backstory Section */}
+            <Card className="mb-4 border-muted/20">
+              <div className="p-3 space-y-2">
+                <div className="flex justify-between items-center">
+                  <h3 className="font-semibold text-sm">AI Backstory</h3>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setShowBackstory(!showBackstory)}
+                    className="h-8"
+                  >
+                    {showBackstory ? "Hide" : "Show"}
+                  </Button>
+                </div>
+                {showBackstory && (
+                  <>
+                    <Textarea
+                      placeholder="Enter the AI's backstory and personality..."
+                      value={backstory}
+                      onChange={(e) => setBackstory(e.target.value)}
+                      className="min-h-[80px] resize-none text-sm"
+                      disabled={messages.length > 0}
+                    />
+                    {messages.length > 0 && (
+                      <p className="text-xs text-muted-foreground">
+                        Backstory can only be set before starting a conversation.
+                      </p>
+                    )}
+                  </>
+                )}
+              </div>
+            </Card>
+
+            {/* Messages Area */}
+            <div className="space-y-4 overflow-y-scroll mb-4">
+              {messages.map((message, index) => (
+                <div
+                  key={index}
+                  className={`flex ${message.type === "user" ? "justify-end" : "justify-start"}`}
+                >
+                  <div
+                    className={cn(
+                      "p-3 rounded-lg max-w-[85%] text-sm",
+                      message.type === "user"
+                        ? "bg-primary text-primary-foreground rounded-br-none"
+                        : "bg-muted/50 rounded-bl-none"
+                    )}
+                  >
+                    {message.content}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Input Area */}
+            <div className="flex gap-2 bg-background p-3 rounded-lg border shadow-sm">
+              <Input
+                value={currentMessage}
+                onChange={(e) => setCurrentMessage(e.target.value)}
+                placeholder="Type your message..."
+                onKeyUp={(e) => e.key === "Enter" && sendMessage()}
+                disabled={!isConnected}
+                className="flex-1 text-sm"
+              />
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={toggleRecording}
+                className={cn(
+                  "transition-colors",
+                  isRecording && "bg-destructive/10 hover:bg-destructive/20 text-destructive"
+                )}
+                disabled={!isConnected}
+              >
+                {isRecording ? (
+                  <MicOff className="w-4 h-4" />
+                ) : (
+                  <Mic className="w-4 h-4" />
+                )}
+              </Button>
+              <Button 
+                size="icon"
+                onClick={sendMessage} 
+                disabled={!isConnected || !currentMessage.trim()}
+                className="gradient-bg"
+              >
+                <Send className="w-4 h-4" />
+              </Button>
+            </div>
+          </div>
         </div>
 
-        {/* Input Area */}
-        <div className="p-4 border-t dark:border-gray-700 bg-white dark:bg-gray-800 sticky bottom-0">
-          <div className="flex gap-2 max-w-4xl mx-auto">
-            <Input
-              value={currentMessage}
-              onChange={(e) => setCurrentMessage(e.target.value)}
-              placeholder="Type your message..."
-              onKeyUp={(e) => e.key === "Enter" && sendMessage()}
-              disabled={!isConnected}
-              className="flex-1"
+        {/* Right Panel - Canvas Area */}
+        <div className="flex-1 grid grid-cols-2 gap-6 p-6 bg-background/50">
+          {/* Middle Section */}
+          <div className="aspect-square rounded-xl border-2 border-dashed border-muted flex items-center justify-center">
+            <div className="text-center p-6">
+              <h3 className="font-semibold mb-2">Gesture Analysis</h3>
+              <p className="text-sm text-muted-foreground">Visual feedback will appear here during the conversation</p>
+            </div>
+          </div>
+
+          {/* Right Section - Video Feed */}
+          <div className="aspect-square rounded-xl border-2 border-dashed border-muted overflow-hidden relative">
+            <video
+              ref={videoRef}
+              autoPlay
+              playsInline
+              muted
+              className="absolute inset-0 w-full h-full object-cover"
             />
-            <Button
-              variant="outline"
-              onClick={toggleRecording}
-              className={`${
-                isRecording 
-                  ? "bg-destructive/10 hover:bg-destructive/20 text-destructive" 
-                  : ""
-              }`}
-              disabled={!isConnected}
-            >
-              {isRecording ? (
-                <MicOff className="w-4 h-4" />
-              ) : (
-                <Mic className="w-4 h-4" />
-              )}
-            </Button>
-            <Button 
-              onClick={sendMessage} 
-              disabled={!isConnected || !currentMessage.trim()}
-              className="px-4"
-            >
-              <Send className="w-4 h-4" />
-            </Button>
+            {!isVideoAvailable && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/50 text-white">
+                <p className="text-sm">Camera Feed Unavailable</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

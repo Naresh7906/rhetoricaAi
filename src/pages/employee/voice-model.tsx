@@ -1,17 +1,17 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Send, Mic, MicOff, Power, ChevronLeft, Mail, Bell } from "lucide-react";
+import { Send, Mic, MicOff, Power, ChevronLeft } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   RTClient,
   RTInputAudioItem,
   RTResponse,
 } from "rt-client";
 import { AudioHandler } from "@/lib/audio";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ThemeToggle } from "@/components/theme-toggle";

@@ -1,0 +1,820 @@
+{
+    "courses": [
+        {
+            "id": "10",
+            "title": "Vocabulary : Advanced",
+            "avatar": "https://picsum.photos/200",
+            "category": "Vocabulary",
+            "author": {
+                "name": "Dr. Sarah Chen",
+                "role": "Language Department",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Learn advanced vocabulary concepts including word families, common prefixes and suffixes, and essential everyday terms. This course builds a strong foundation for effective communication.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Introduction to Word Families",
+                    "duration": "15 min",
+                    "videoUrl": "/videos/vocabulary/intro.mp4",
+                    "resources": [
+                        "Word Families Chart",
+                        "Practice Worksheet"
+                    ],
+                    "hasQuiz": true
+                },
+                {
+                    "id": 2,
+                    "title": "Prefixes and Suffixes",
+                    "duration": "20 min",
+                    "videoUrl": "/videos/vocabulary/prefixes.mp4",
+                    "resources": [
+                        "Prefix-Suffix Guide",
+                        "Exercise Sheet"
+                    ],
+                    "hasQuiz": true
+                },
+                {
+                    "id": 3,
+                    "title": "Essential Business Vocabulary",
+                    "duration": "25 min",
+                    "videoUrl": "/videos/vocabulary/business.mp4",
+                    "resources": [
+                        "Business Terms PDF",
+                        "Practice Tests"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": [
+                {
+                    "id": 1,
+                    "user": {
+                        "name": "John Smith",
+                        "avatar": "/avatars/john.jpg"
+                    },
+                    "message": "The word family concept really helped me understand vocabulary better!",
+                    "time": "2d ago",
+                    "replies": 5
+                }
+            ]
+        },
+        {
+            "id": "11",
+            "title": "Effective Communication Skills",
+            "avatar": "https://picsum.photos/200",
+            "category": "Communication",
+            "author": {
+                "name": "Prof. Michael Roberts",
+                "role": "Communications Expert",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Master the art of clear and impactful communication in professional settings. Learn active listening, nonverbal communication, and presentation skills.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Active Listening Fundamentals",
+                    "duration": "30 min",
+                    "videoUrl": "/videos/communication/active-listening.mp4",
+                    "resources": [
+                        "Active Listening Checklist",
+                        "Practice Scenarios"
+                    ],
+                    "hasQuiz": true
+                },
+                {
+                    "id": 2,
+                    "title": "Body Language Mastery",
+                    "duration": "25 min",
+                    "videoUrl": "/videos/communication/body-language.mp4",
+                    "resources": [
+                        "Body Language Guide",
+                        "Self-Assessment Tools"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "12",
+            "title": "Emotional Intelligence at Work",
+            "avatar": "https://picsum.photos/200",
+            "category": "Leadership",
+            "author": {
+                "name": "Dr. Emily Watson",
+                "role": "Organizational Psychologist",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Develop your emotional intelligence to better understand and manage emotions, build stronger relationships, and navigate workplace dynamics.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Understanding EQ Components",
+                    "duration": "20 min",
+                    "videoUrl": "/videos/eq/components.mp4",
+                    "resources": [
+                        "EQ Assessment Tool",
+                        "Reflection Journal"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "13",
+            "title": "Time Management Mastery",
+            "avatar": "https://picsum.photos/200",
+            "category": "Productivity",
+            "author": {
+                "name": "Dr. James Miller",
+                "role": "Productivity Consultant",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Learn essential time management techniques to boost productivity, reduce stress, and achieve better work-life balance. Master prioritization, planning, and delegation skills.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Prioritization Techniques",
+                    "duration": "25 min",
+                    "videoUrl": "/videos/timemanagement/prioritization.mp4",
+                    "resources": [
+                        "Priority Matrix Template",
+                        "Daily Planner Worksheet"
+                    ],
+                    "hasQuiz": true
+                },
+                {
+                    "id": 2,
+                    "title": "Effective Delegation",
+                    "duration": "20 min",
+                    "videoUrl": "/videos/timemanagement/delegation.mp4",
+                    "resources": [
+                        "Delegation Framework",
+                        "Task Assignment Template"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "14",
+            "title": "Conflict Resolution in the Workplace",
+            "avatar": "https://picsum.photos/200",
+            "category": "Professional Development",
+            "author": {
+                "name": "Dr. Lisa Thompson",
+                "role": "Workplace Mediator",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Develop skills to effectively manage and resolve workplace conflicts. Learn mediation techniques, difficult conversations, and conflict prevention strategies.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Understanding Conflict Types",
+                    "duration": "30 min",
+                    "videoUrl": "/videos/conflict/types.mp4",
+                    "resources": [
+                        "Conflict Analysis Framework",
+                        "Case Studies"
+                    ],
+                    "hasQuiz": true
+                },
+                {
+                    "id": 2,
+                    "title": "Mediation Skills",
+                    "duration": "35 min",
+                    "videoUrl": "/videos/conflict/mediation.mp4",
+                    "resources": [
+                        "Mediation Checklist",
+                        "Practice Scenarios"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "15",
+            "title": "Team Collaboration Essentials",
+            "avatar": "https://picsum.photos/200",
+            "category": "Teamwork",
+            "author": {
+                "name": "Prof. David Chen",
+                "role": "Team Development Specialist",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Learn to work effectively in teams, foster collaboration, and achieve collective goals. Master group dynamics, team communication, and collaborative problem-solving.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Building Trust in Teams",
+                    "duration": "25 min",
+                    "videoUrl": "/videos/teamwork/trust.mp4",
+                    "resources": [
+                        "Team Building Exercises",
+                        "Trust Assessment Tool"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "16",
+            "title": "Leadership Fundamentals",
+            "avatar": "https://picsum.photos/200",
+            "category": "Leadership",
+            "author": {
+                "name": "Dr. Robert Martinez",
+                "role": "Leadership Coach",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Develop core leadership skills including vision-setting, motivation, delegation, and team empowerment. Learn different leadership styles and when to apply them.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Leadership Styles",
+                    "duration": "40 min",
+                    "videoUrl": "/videos/leadership/styles.mp4",
+                    "resources": [
+                        "Leadership Style Assessment",
+                        "Case Studies"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "17",
+            "title": "Critical Thinking and Analysis",
+            "avatar": "https://picsum.photos/200",
+            "category": "Professional Development",
+            "author": {
+                "name": "Dr. Sarah Williams",
+                "role": "Critical Thinking Expert",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Enhance your analytical and critical thinking abilities. Learn structured approaches to problem-solving, decision-making, and logical reasoning.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Analytical Framework",
+                    "duration": "30 min",
+                    "videoUrl": "/videos/criticalthinking/framework.mp4",
+                    "resources": [
+                        "Analysis Template",
+                        "Practice Problems"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "18",
+            "title": "Advanced Problem-Solving Techniques",
+            "avatar": "https://picsum.photos/200",
+            "category": "Professional Development",
+            "author": {
+                "name": "Dr. Alan Parker",
+                "role": "Strategic Problem-Solving Expert",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Master advanced problem-solving methodologies including root cause analysis, design thinking, and systematic innovation techniques for complex business challenges.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Root Cause Analysis",
+                    "duration": "35 min",
+                    "videoUrl": "/videos/problemsolving/rootcause.mp4",
+                    "resources": [
+                        "5-Why Analysis Template",
+                        "Problem-Solving Toolkit"
+                    ],
+                    "hasQuiz": true
+                },
+                {
+                    "id": 2,
+                    "title": "Design Thinking Process",
+                    "duration": "40 min",
+                    "videoUrl": "/videos/problemsolving/designthinking.mp4",
+                    "resources": [
+                        "Design Thinking Workbook",
+                        "Case Studies"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "19",
+            "title": "Mastering Workplace Adaptability",
+            "avatar": "https://picsum.photos/200",
+            "category": "Professional Development",
+            "author": {
+                "name": "Dr. Rachel Chang",
+                "role": "Change Management Specialist",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Develop the skills to thrive in rapidly changing environments. Learn to embrace change, build resilience, and maintain productivity during transitions.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Understanding Change Psychology",
+                    "duration": "25 min",
+                    "videoUrl": "/videos/adaptability/changepsych.mp4",
+                    "resources": [
+                        "Change Readiness Assessment",
+                        "Adaptation Strategies Guide"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "20",
+            "title": "Professional Negotiation Skills",
+            "avatar": "https://picsum.photos/200",
+            "category": "Business Skills",
+            "author": {
+                "name": "Prof. Daniel Foster",
+                "role": "Negotiation Expert",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Learn proven negotiation strategies for business success. Master the art of win-win negotiations, understanding leverage, and building lasting agreements.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Negotiation Fundamentals",
+                    "duration": "45 min",
+                    "videoUrl": "/videos/negotiation/fundamentals.mp4",
+                    "resources": [
+                        "Negotiation Preparation Checklist",
+                        "Strategy Worksheet"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "21",
+            "title": "Public Speaking Mastery",
+            "avatar": "https://picsum.photos/200",
+            "category": "Communication",
+            "author": {
+                "name": "Dr. Victoria Reynolds",
+                "role": "Public Speaking Coach",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Transform your public speaking abilities. Learn to deliver powerful presentations, handle Q&A sessions, and connect with any audience.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Speech Structure and Design",
+                    "duration": "30 min",
+                    "videoUrl": "/videos/speaking/structure.mp4",
+                    "resources": [
+                        "Speech Template",
+                        "Presentation Checklist"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "22",
+            "title": "Work-Life Balance Strategies",
+            "avatar": "https://picsum.photos/200",
+            "category": "Personal Development",
+            "author": {
+                "name": "Dr. Maya Patel",
+                "role": "Wellness Consultant",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Discover practical strategies for maintaining a healthy work-life balance. Learn to set boundaries, manage stress, and optimize your time for both professional and personal fulfillment.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Boundary Setting",
+                    "duration": "25 min",
+                    "videoUrl": "/videos/worklife/boundaries.mp4",
+                    "resources": [
+                        "Boundary Workshop",
+                        "Time Audit Template"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "23",
+            "title": "Strategic Decision Making",
+            "avatar": "https://picsum.photos/200",
+            "category": "Leadership",
+            "author": {
+                "name": "Prof. Thomas Anderson",
+                "role": "Decision Science Expert",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Learn frameworks and techniques for making better decisions in complex business environments. Master risk assessment, stakeholder analysis, and decision modeling.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Decision Analysis Framework",
+                    "duration": "35 min",
+                    "videoUrl": "/videos/decision/framework.mp4",
+                    "resources": [
+                        "Decision Matrix Template",
+                        "Risk Assessment Guide"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "24",
+            "title": "Building Professional Networks",
+            "avatar": "https://picsum.photos/200",
+            "category": "Career Development",
+            "author": {
+                "name": "Dr. Jennifer Liu",
+                "role": "Networking Strategist",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Develop effective networking strategies for career growth. Learn to build and maintain professional relationships, leverage LinkedIn, and create meaningful connections.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Strategic Networking",
+                    "duration": "30 min",
+                    "videoUrl": "/videos/networking/strategy.mp4",
+                    "resources": [
+                        "Networking Plan Template",
+                        "LinkedIn Profile Guide"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "25",
+            "title": "Personal Branding for Professionals",
+            "avatar": "https://picsum.photos/200",
+            "category": "Career Development",
+            "author": {
+                "name": "Prof. Amanda Brooks",
+                "role": "Personal Brand Strategist",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Create and maintain a strong personal brand that sets you apart in your industry. Learn to communicate your value proposition and build a consistent professional image.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Brand Development",
+                    "duration": "40 min",
+                    "videoUrl": "/videos/branding/development.mp4",
+                    "resources": [
+                        "Personal Brand Workbook",
+                        "Online Presence Audit"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "26",
+            "title": "Cross-Cultural Communication",
+            "avatar": "https://picsum.photos/200",
+            "category": "Communication",
+            "author": {
+                "name": "Dr. Maria Rodriguez",
+                "role": "Cultural Intelligence Expert",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Develop skills for effective communication across cultural boundaries. Learn to navigate cultural differences, avoid misunderstandings, and build strong international relationships.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Cultural Awareness",
+                    "duration": "35 min",
+                    "videoUrl": "/videos/cultural/awareness.mp4",
+                    "resources": [
+                        "Cultural Intelligence Assessment",
+                        "Communication Guidelines"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "27",
+            "title": "Mindfulness in the Workplace",
+            "avatar": "https://picsum.photos/200",
+            "category": "Personal Development",
+            "author": {
+                "name": "Dr. Sophie Bennett",
+                "role": "Workplace Wellness Expert",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Learn practical mindfulness techniques to enhance focus, reduce stress, and improve workplace relationships. Develop strategies for maintaining presence and clarity under pressure.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Mindfulness Basics",
+                    "duration": "25 min",
+                    "videoUrl": "/videos/mindfulness/basics.mp4",
+                    "resources": [
+                        "Meditation Guide",
+                        "Daily Practice Journal"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "28",
+            "title": "Project Management Essentials",
+            "avatar": "https://picsum.photos/200",
+            "category": "Project Management",
+            "author": {
+                "name": "Dr. Mark Stevens",
+                "role": "PMP Certified Trainer",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Master the fundamentals of project management, from planning to execution. Learn to manage timelines, resources, and stakeholders effectively.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Project Planning Fundamentals",
+                    "duration": "45 min",
+                    "videoUrl": "/videos/project/planning.mp4",
+                    "resources": [
+                        "Project Plan Template",
+                        "Risk Register Template"
+                    ],
+                    "hasQuiz": true
+                },
+                {
+                    "id": 2,
+                    "title": "Stakeholder Management",
+                    "duration": "30 min",
+                    "videoUrl": "/videos/project/stakeholders.mp4",
+                    "resources": [
+                        "Stakeholder Analysis Matrix",
+                        "Communication Plan Template"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "29",
+            "title": "Business Writing Excellence",
+            "avatar": "https://picsum.photos/200",
+            "category": "Communication",
+            "author": {
+                "name": "Prof. Elizabeth Carter",
+                "role": "Business Communication Expert",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Develop clear, concise, and effective business writing skills. Master email communication, report writing, and professional documentation.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Email Writing Mastery",
+                    "duration": "35 min",
+                    "videoUrl": "/videos/writing/email.mp4",
+                    "resources": [
+                        "Email Templates",
+                        "Style Guide"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "30",
+            "title": "Change Management Leadership",
+            "avatar": "https://picsum.photos/200",
+            "category": "Leadership",
+            "author": {
+                "name": "Dr. Richard Hughes",
+                "role": "Change Management Consultant",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Learn to lead organizational change effectively. Master change management frameworks, stakeholder engagement, and resistance management.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Leading Change",
+                    "duration": "40 min",
+                    "videoUrl": "/videos/change/leading.mp4",
+                    "resources": [
+                        "Change Management Toolkit",
+                        "Implementation Guide"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "31",
+            "title": "Creative Problem-Solving Innovation",
+            "avatar": "https://picsum.photos/200",
+            "category": "Innovation",
+            "author": {
+                "name": "Dr. Nina Patel",
+                "role": "Innovation Strategist",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Unlock your creative potential with innovative problem-solving techniques. Learn design thinking, lateral thinking, and breakthrough innovation methods.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Creative Thinking Tools",
+                    "duration": "30 min",
+                    "videoUrl": "/videos/creative/tools.mp4",
+                    "resources": [
+                        "Innovation Workbook",
+                        "Ideation Templates"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "32",
+            "title": "Customer Service Excellence",
+            "avatar": "https://picsum.photos/200",
+            "category": "Customer Relations",
+            "author": {
+                "name": "Prof. Laura Martinez",
+                "role": "Customer Experience Specialist",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Develop exceptional customer service skills. Learn to handle difficult situations, exceed expectations, and create memorable customer experiences.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Service Excellence Foundations",
+                    "duration": "35 min",
+                    "videoUrl": "/videos/customer/excellence.mp4",
+                    "resources": [
+                        "Service Standards Guide",
+                        "Case Resolution Templates"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "33",
+            "title": "Strategic Thinking and Planning",
+            "avatar": "https://picsum.photos/200",
+            "category": "Leadership",
+            "author": {
+                "name": "Dr. William Blake",
+                "role": "Strategic Planning Consultant",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Develop strategic thinking capabilities and learn effective planning methodologies. Master strategic analysis, goal setting, and execution planning.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Strategic Analysis",
+                    "duration": "45 min",
+                    "videoUrl": "/videos/strategy/analysis.mp4",
+                    "resources": [
+                        "Strategy Framework",
+                        "Planning Templates"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "34",
+            "title": "Workplace Diversity and Inclusion",
+            "avatar": "https://picsum.photos/200",
+            "category": "Professional Development",
+            "author": {
+                "name": "Dr. Angela Washington",
+                "role": "D&I Consultant",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Learn to create and maintain inclusive workplaces. Understand unconscious bias, cultural competency, and inclusive leadership practices.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Understanding Bias",
+                    "duration": "40 min",
+                    "videoUrl": "/videos/diversity/bias.mp4",
+                    "resources": [
+                        "Bias Assessment Tool",
+                        "Inclusion Checklist"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "35",
+            "title": "Professional Presentation Design",
+            "avatar": "https://picsum.photos/200",
+            "category": "Communication",
+            "author": {
+                "name": "Prof. Michael Chen",
+                "role": "Presentation Design Expert",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Master the art of creating compelling business presentations. Learn visual design principles, storytelling techniques, and presentation tools.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Visual Design Principles",
+                    "duration": "35 min",
+                    "videoUrl": "/videos/presentation/design.mp4",
+                    "resources": [
+                        "Design Guidelines",
+                        "Template Library"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "36",
+            "title": "Stress Management for Professionals",
+            "avatar": "https://picsum.photos/200",
+            "category": "Personal Development",
+            "author": {
+                "name": "Dr. Sarah Cooper",
+                "role": "Workplace Wellness Expert",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Learn effective strategies for managing workplace stress. Master relaxation techniques, cognitive reframing, and sustainable work practices.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Stress Management Techniques",
+                    "duration": "30 min",
+                    "videoUrl": "/videos/stress/techniques.mp4",
+                    "resources": [
+                        "Stress Assessment Tool",
+                        "Relaxation Guide"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        },
+        {
+            "id": "37",
+            "title": "Growth Mindset Development",
+            "avatar": "https://picsum.photos/200",
+            "category": "Personal Development",
+            "author": {
+                "name": "Dr. David Foster",
+                "role": "Professional Development Coach",
+                "avatar": "https://picsum.photos/200"
+            },
+            "description": "Develop a growth mindset for continuous learning and professional development. Learn to embrace challenges, persist through obstacles, and learn from feedback.",
+            "chapters": [
+                {
+                    "id": 1,
+                    "title": "Understanding Growth Mindset",
+                    "duration": "25 min",
+                    "videoUrl": "/videos/mindset/growth.mp4",
+                    "resources": [
+                        "Mindset Assessment",
+                        "Development Journal"
+                    ],
+                    "hasQuiz": true
+                }
+            ],
+            "discussions": []
+        }
+    ]
+}

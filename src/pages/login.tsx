@@ -1,23 +1,31 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Building, Building2 } from "lucide-react";
-
-type LoginRole = "employee" | "hr";
+import { Building, Building2, Loader2, Mic } from "lucide-react";
+import { useUser } from "@/contexts/user-context";
+import type { UserRole } from "@/contexts/user-context";
+import { useNavigate } from "react-router-dom";
 
 export function Login() {
+  const { loginWithSSO, isLoading } = useUser();
+  const [role, setRole] = useState<UserRole>("employee");
+  const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
-  const [role, setRole] = useState<LoginRole>("employee");
 
-  const handleSSOLogin = () => {
-    // TODO: Implement SSO authentication
-    navigate(`/${role}/dashboard`);
+  const handleSSOLogin = async () => {
+    try {
+      setError(null);
+      await loginWithSSO(role);
+    } catch (err) {
+      setError('SSO login failed. Please try again.');
+      console.error('Login error:', err);
+    }
   };
 
   const toggleRole = () => {
     setRole(role === "employee" ? "hr" : "employee");
+    setError(null);
   };
 
   const isEmployee = role === "employee";
@@ -108,11 +116,34 @@ export function Login() {
             </CardHeader>
 
             <CardContent className="space-y-4 relative z-10 pt-4">
+              {error && (
+                <div className="text-red-500 text-sm text-center bg-red-100/10 p-2 rounded-lg">
+                  {error}
+                </div>
+              )}
+              
               <Button 
                 className="w-full gradient-bg hover:opacity-90 text-[clamp(1rem,2.5vw,1.125rem)] h-[clamp(3rem,8vw,3.5rem)] rounded-2xl shadow-xl shadow-purple-500/20 transition-all duration-300 hover:shadow-purple-500/30 hover:scale-[1.02]"
                 onClick={handleSSOLogin}
+                disabled={isLoading}
               >
-                Sign in with SSO
+                {isLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Signing in...
+                  </>
+                ) : (
+                  "Sign in with SSO"
+                )}
+              </Button>
+
+              <Button
+                variant="outline"
+                className="w-full flex items-center justify-center gap-2 text-[clamp(0.875rem,2vw,1rem)] text-purple-600 dark:text-purple-400 hover:bg-purple-500/5 border-purple-200/20 transition-colors rounded-xl h-[clamp(2.5rem,6vw,3rem)]"
+                onClick={() => navigate('/versant-test')}
+              >
+                <Mic className="w-4 h-4" />
+                Try Versant Test Demo
               </Button>
 
               <div className="relative py-2">
@@ -128,6 +159,7 @@ export function Login() {
                 variant="ghost"
                 className="w-full text-[clamp(0.875rem,2vw,1rem)] text-muted-foreground hover:text-primary hover:bg-purple-500/5 transition-colors rounded-xl h-[clamp(2.5rem,6vw,3rem)]"
                 onClick={toggleRole}
+                disabled={isLoading}
               >
                 Switch to {isEmployee ? "HR" : "Employee"} Login
               </Button>

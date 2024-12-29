@@ -1,0 +1,499 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "title": "Vocabulary : Mastering the Basics",
+      "avatar": "https://picsum.photos/200",
+      "status": "completed",
+      "category": "Vocabulary",
+      "author": {
+        "name": "Dr. Sarah Chen",
+        "role": "Language Department",
+        "avatar": "https://picsum.photos/200"
+      },
+      "progress": 100,
+      "description": "Learn fundamental vocabulary concepts including word families, common prefixes and suffixes, and essential everyday terms. This course builds a strong foundation for effective communication.",
+      "chapters": [
+        {
+          "id": 1,
+          "title": "Introduction to Word Families",
+          "completed": true,
+          "duration": "15 min",
+          "videoUrl": "/videos/vocabulary/intro.mp4",
+          "resources": ["Word Families Chart", "Practice Worksheet"],
+          "hasQuiz": true
+        },
+        {
+          "id": 2,
+          "title": "Prefixes and Suffixes",
+          "completed": true,
+          "duration": "20 min",
+          "videoUrl": "/videos/vocabulary/prefixes.mp4",
+          "resources": ["Prefix-Suffix Guide", "Exercise Sheet"],
+          "hasQuiz": true
+        },
+        {
+          "id": 3,
+          "title": "Essential Business Vocabulary",
+          "completed": true,
+          "duration": "25 min",
+          "videoUrl": "/videos/vocabulary/business.mp4",
+          "resources": ["Business Terms PDF", "Practice Tests"],
+          "hasQuiz": true
+        }
+      ],
+      "discussions": [
+        {
+          "id": 1,
+          "user": {
+            "name": "John Smith",
+            "avatar": "/avatars/john.jpg"
+          },
+          "message": "The word family concept really helped me understand vocabulary better!",
+          "time": "2d ago",
+          "replies": 5
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Pronunciation : Mastering the Basics",
+      "avatar": "https://picsum.photos/200",
+      "status": "completed",
+      "category": "Pronunciation",
+      "author": {
+        "name": "Prof. James Martinez",
+        "role": "Phonetics Department",
+        "avatar": "https://picsum.photos/200"
+      },
+      "progress": 100,
+      "description": "Master the basics of pronunciation including phonemes, stress patterns, and intonation. Practice with interactive exercises to improve clarity and confidence in speaking.",
+      "chapters": [
+        {
+          "id": 1,
+          "title": "Understanding Phonemes",
+          "completed": true,
+          "duration": "20 min",
+          "videoUrl": "/videos/pronunciation/phonemes.mp4",
+          "resources": ["Phoneme Chart", "Audio Exercises"],
+          "hasQuiz": true
+        },
+        {
+          "id": 2,
+          "title": "Stress Patterns",
+          "completed": true,
+          "duration": "25 min",
+          "videoUrl": "/videos/pronunciation/stress.mp4",
+          "resources": ["Stress Pattern Guide", "Practice Recording"],
+          "hasQuiz": true
+        },
+        {
+          "id": 3,
+          "title": "Intonation Techniques",
+          "completed": true,
+          "duration": "30 min",
+          "videoUrl": "/videos/pronunciation/intonation.mp4",
+          "resources": ["Intonation Guide", "Speaking Exercises"],
+          "hasQuiz": true
+        }
+      ],
+      "discussions": [
+        {
+          "id": 1,
+          "user": {
+            "name": "Maria Garcia",
+            "avatar": "/avatars/maria.jpg"
+          },
+          "message": "The audio exercises were incredibly helpful for practicing!",
+          "time": "1d ago",
+          "replies": 3
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Speech : Mastering the Basics",
+      "avatar": "https://picsum.photos/200",
+      "status": "in_progress",
+      "category": "Speech",
+      "author": {
+        "name": "Emma Thompson, PhD",
+        "role": "Speech Department",
+        "avatar": "https://picsum.photos/200"
+      },
+      "progress": 45,
+      "description": "Develop essential public speaking skills, including proper pacing, voice modulation, and audience engagement. Learn techniques for delivering clear and impactful presentations.",
+      "chapters": [
+        {
+          "id": 1,
+          "title": "Voice Modulation Basics",
+          "completed": true,
+          "duration": "20 min",
+          "videoUrl": "/videos/speech/modulation.mp4",
+          "resources": ["Voice Exercise Guide", "Practice Recordings"],
+          "hasQuiz": true
+        },
+        {
+          "id": 2,
+          "title": "Pacing and Rhythm",
+          "completed": true,
+          "duration": "25 min",
+          "videoUrl": "/videos/speech/pacing.mp4",
+          "resources": ["Rhythm Patterns", "Speech Examples"],
+          "hasQuiz": true
+        },
+        {
+          "id": 3,
+          "title": "Audience Engagement",
+          "completed": false,
+          "duration": "30 min",
+          "videoUrl": "/videos/speech/engagement.mp4",
+          "resources": ["Engagement Techniques", "Practice Scenarios"],
+          "hasQuiz": true
+        }
+      ],
+      "discussions": [
+        {
+          "id": 1,
+          "user": {
+            "name": "Alex Johnson",
+            "avatar": "/avatars/alex.jpg"
+          },
+          "message": "The voice modulation exercises have really improved my presentation skills!",
+          "time": "3d ago",
+          "replies": 4
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Certification : Mastering the Basics",
+      "avatar": "https://picsum.photos/200",
+      "status": "not_started",
+      "category": "Certification",
+      "author": {
+        "name": "Dr. Sarah Chen",
+        "role": "Language Department",
+        "avatar": "https://picsum.photos/200"
+      },
+      "progress": 0,
+      "description": "Earn a certification in English language skills, demonstrating your proficiency in English. This credential is valuable in the job market and can enhance your career opportunities.",
+      "chapters": [
+        {
+          "id": 1,
+          "title": "Certification Overview",
+          "completed": false,
+          "duration": "15 min",
+          "videoUrl": "/videos/certification/overview.mp4",
+          "resources": ["Certification Guide", "Study Plan"],
+          "hasQuiz": true
+        },
+        {
+          "id": 2,
+          "title": "Practice Assessment",
+          "completed": false,
+          "duration": "45 min",
+          "videoUrl": "/videos/certification/practice.mp4",
+          "resources": ["Sample Questions", "Assessment Tips"],
+          "hasQuiz": true
+        },
+        {
+          "id": 3,
+          "title": "Final Certification Exam",
+          "completed": false,
+          "duration": "60 min",
+          "videoUrl": "/videos/certification/final.mp4",
+          "resources": ["Exam Guidelines", "Preparation Materials"],
+          "hasQuiz": true
+        }
+      ],
+      "discussions": [
+        {
+          "id": 1,
+          "user": {
+            "name": "Sarah Lee",
+            "avatar": "/avatars/sarah.jpg"
+          },
+          "message": "The practice assessments really helped me prepare for the final exam!",
+          "time": "1w ago",
+          "replies": 7
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Leadership Fundamentals",
+      "avatar": "https://picsum.photos/200",
+      "status": "not_started",
+      "category": "Leadership",
+      "author": {
+        "name": "Michael Roberts",
+        "role": "Leadership Development",
+        "avatar": "https://picsum.photos/200"
+      },
+      "progress": 0,
+      "description": "Learn core leadership principles including team motivation, decision-making, and delegation. Develop your personal leadership style and learn how to inspire and guide others effectively.",
+      "chapters": [
+        {
+          "id": 1,
+          "title": "Understanding Leadership Styles",
+          "completed": false,
+          "duration": "25 min",
+          "videoUrl": "/videos/leadership/styles.mp4",
+          "resources": ["Leadership Styles Guide", "Self-Assessment"],
+          "hasQuiz": true
+        },
+        {
+          "id": 2,
+          "title": "Team Motivation Techniques",
+          "completed": false,
+          "duration": "30 min",
+          "videoUrl": "/videos/leadership/motivation.mp4",
+          "resources": ["Motivation Strategies", "Case Studies"],
+          "hasQuiz": true
+        },
+        {
+          "id": 3,
+          "title": "Effective Delegation",
+          "completed": false,
+          "duration": "20 min",
+          "videoUrl": "/videos/leadership/delegation.mp4",
+          "resources": ["Delegation Framework", "Practice Exercises"],
+          "hasQuiz": true
+        }
+      ],
+      "discussions": [
+        {
+          "id": 1,
+          "user": {
+            "name": "David Chen",
+            "avatar": "/avatars/david.jpg"
+          },
+          "message": "The practical examples really helped me understand different leadership styles.",
+          "time": "5d ago",
+          "replies": 3
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Emotional Intelligence in the Workplace",
+      "avatar": "https://picsum.photos/200",
+      "status": "not_started",
+      "category": "Personal Development",
+      "author": {
+        "name": "Dr. Lisa Kumar",
+        "role": "Organizational Psychology",
+        "avatar": "https://picsum.photos/200"
+      },
+      "progress": 0,
+      "description": "Master the art of emotional intelligence, including self-awareness, empathy, and relationship management. Learn to navigate workplace dynamics and build stronger professional relationships.",
+      "chapters": [
+        {
+          "id": 1,
+          "title": "Understanding Self-Awareness",
+          "completed": false,
+          "duration": "25 min",
+          "videoUrl": "/videos/ei/self-awareness.mp4",
+          "resources": ["Self-Assessment Tool", "Reflection Exercises"],
+          "hasQuiz": true
+        },
+        {
+          "id": 2,
+          "title": "Developing Empathy",
+          "completed": false,
+          "duration": "30 min",
+          "videoUrl": "/videos/ei/empathy.mp4",
+          "resources": ["Empathy Scenarios", "Practice Guide"],
+          "hasQuiz": true
+        },
+        {
+          "id": 3,
+          "title": "Relationship Management",
+          "completed": false,
+          "duration": "35 min",
+          "videoUrl": "/videos/ei/relationships.mp4",
+          "resources": ["Relationship Building Tools", "Case Studies"],
+          "hasQuiz": true
+        }
+      ],
+      "discussions": [
+        {
+          "id": 1,
+          "user": {
+            "name": "Emily Wong",
+            "avatar": "/avatars/emily.jpg"
+          },
+          "message": "The empathy exercises really changed how I interact with my colleagues.",
+          "time": "4d ago",
+          "replies": 6
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Effective Time Management",
+      "avatar": "https://picsum.photos/200",
+      "status": "not_started",
+      "category": "Productivity",
+      "author": {
+        "name": "Michael Roberts",
+        "role": "Productivity Expert",
+        "avatar": "https://picsum.photos/200"
+      },
+      "progress": 0,
+      "description": "Discover practical strategies for prioritizing tasks, managing deadlines, and increasing productivity. Learn to balance multiple responsibilities while maintaining work-life harmony.",
+      "chapters": [
+        {
+          "id": 1,
+          "title": "Prioritization Techniques",
+          "completed": false,
+          "duration": "20 min",
+          "videoUrl": "/videos/time/prioritization.mp4",
+          "resources": ["Priority Matrix Template", "Task List Templates"],
+          "hasQuiz": true
+        },
+        {
+          "id": 2,
+          "title": "Deadline Management",
+          "completed": false,
+          "duration": "25 min",
+          "videoUrl": "/videos/time/deadlines.mp4",
+          "resources": ["Time Blocking Guide", "Project Timeline Templates"],
+          "hasQuiz": true
+        },
+        {
+          "id": 3,
+          "title": "Work-Life Balance",
+          "completed": false,
+          "duration": "30 min",
+          "videoUrl": "/videos/time/balance.mp4",
+          "resources": ["Balance Assessment", "Weekly Planner"],
+          "hasQuiz": true
+        }
+      ],
+      "discussions": [
+        {
+          "id": 1,
+          "user": {
+            "name": "Tom Wilson",
+            "avatar": "/avatars/tom.jpg"
+          },
+          "message": "The priority matrix has revolutionized how I manage my tasks!",
+          "time": "2d ago",
+          "replies": 4
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Conflict Resolution Strategies",
+      "avatar": "https://picsum.photos/200",
+      "status": "not_started",
+      "category": "Communication",
+      "author": {
+        "name": "Dr. Lisa Kumar",
+        "role": "Conflict Resolution Specialist",
+        "avatar": "https://picsum.photos/200"
+      },
+      "progress": 0,
+      "description": "Learn proven techniques for managing and resolving workplace conflicts. Develop skills in negotiation, mediation, and creating win-win solutions in challenging situations.",
+      "chapters": [
+        {
+          "id": 1,
+          "title": "Understanding Conflict Types",
+          "completed": false,
+          "duration": "25 min",
+          "videoUrl": "/videos/conflict/types.mp4",
+          "resources": ["Conflict Analysis Framework", "Case Examples"],
+          "hasQuiz": true
+        },
+        {
+          "id": 2,
+          "title": "Negotiation Skills",
+          "completed": false,
+          "duration": "35 min",
+          "videoUrl": "/videos/conflict/negotiation.mp4",
+          "resources": ["Negotiation Checklist", "Practice Scenarios"],
+          "hasQuiz": true
+        },
+        {
+          "id": 3,
+          "title": "Mediation Techniques",
+          "completed": false,
+          "duration": "30 min",
+          "videoUrl": "/videos/conflict/mediation.mp4",
+          "resources": ["Mediation Guide", "Role-Play Exercises"],
+          "hasQuiz": true
+        }
+      ],
+      "discussions": [
+        {
+          "id": 1,
+          "user": {
+            "name": "Rachel Kim",
+            "avatar": "/avatars/rachel.jpg"
+          },
+          "message": "The negotiation skills section provided really practical solutions!",
+          "time": "6d ago",
+          "replies": 8
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Critical Thinking and Problem Solving",
+      "avatar": "https://picsum.photos/200",
+      "status": "not_started",
+      "category": "Analytical Skills",
+      "author": {
+        "name": "Prof. James Martinez",
+        "role": "Analytics Department",
+        "avatar": "https://picsum.photos/200"
+      },
+      "progress": 0,
+      "description": "Enhance your analytical and problem-solving capabilities through structured thinking frameworks. Learn to approach challenges systematically and make well-reasoned decisions.",
+      "chapters": [
+        {
+          "id": 1,
+          "title": "Analytical Thinking Framework",
+          "completed": false,
+          "duration": "30 min",
+          "videoUrl": "/videos/critical/framework.mp4",
+          "resources": ["Analysis Templates", "Practice Problems"],
+          "hasQuiz": true
+        },
+        {
+          "id": 2,
+          "title": "Problem-Solving Methods",
+          "completed": false,
+          "duration": "35 min",
+          "videoUrl": "/videos/critical/problem-solving.mp4",
+          "resources": ["Method Guide", "Case Studies"],
+          "hasQuiz": true
+        },
+        {
+          "id": 3,
+          "title": "Decision-Making Techniques",
+          "completed": false,
+          "duration": "25 min",
+          "videoUrl": "/videos/critical/decision.mp4",
+          "resources": ["Decision Matrix", "Scenario Exercises"],
+          "hasQuiz": true
+        }
+      ],
+      "discussions": [
+        {
+          "id": 1,
+          "user": {
+            "name": "Michael Chang",
+            "avatar": "/avatars/michael.jpg"
+          },
+          "message": "The analytical frameworks have helped me tackle complex problems more effectively.",
+          "time": "1w ago",
+          "replies": 5
+        }
+      ]
+    }
+  ]
+}

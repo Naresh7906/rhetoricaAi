@@ -1,0 +1,116 @@
+{
+    "id": "1",
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "avatar": "https://picsum.photos/200",
+    "stats": {
+        "completed_courses": 3,
+        "average_score": 87,
+        "certifications": 3,
+        "learning_hours": 20
+    },
+    "main_program": {
+        "id": "1_main_program",
+        "name": "Learning Path",
+        "description": "This is the main learning path for the employee.",
+        "courses": [
+            {
+                "id": "1",
+                "name": "Vocabulary : Mastering the Basics",
+                "avatar": "https://picsum.photos/200",
+                "status": "completed",
+                "category": "Vocabulary",
+                "author": "Dr. Sarah Chen",
+                "description": "Learn fundamental vocabulary concepts including word families, common prefixes and suffixes, and essential everyday terms. This course builds a strong foundation for effective communication."
+            },
+            {
+                "id": "2",
+                "name": "Pronunciation : Mastering the Basics",
+                "avatar": "https://picsum.photos/200",
+                "status": "completed",
+                "category": "Pronunciation",
+                "author": "Prof. James Martinez",
+                "description": "Master the basics of pronunciation including phonemes, stress patterns, and intonation. Practice with interactive exercises to improve clarity and confidence in speaking."
+            },
+            {
+                "id": "3",
+                "name": "Speech : Mastering the Basics",
+                "avatar": "https://picsum.photos/200",
+                "status": "in_progress",
+                "category": "Speech",
+                "author": "Emma Thompson, PhD",
+                "description": "Develop essential public speaking skills, including proper pacing, voice modulation, and audience engagement. Learn techniques for delivering clear and impactful presentations."
+            },
+            {
+                "id": "4",
+                "name": "Certification : Mastering the Basics",
+                "avatar": "https://picsum.photos/200",
+                "status": "not_started",
+                "category": "Certification",
+                "author": "Dr. Sarah Chen",
+                "description": "Earn a certification in English language skills, demonstrating your proficiency in English. This credential is valuable in the job market and can enhance your career opportunities."
+            }
+        ]
+    },
+    "learning_path": {
+        "id": "1_learning_path",
+        "name": "Learning Path",
+        "description": "This is the learning path created by the employee. It contains courses that the employee has added to their learning path.",
+        "courses": [
+            {
+                "id": "3",
+                "name": "Speech : Mastering the Basics",
+                "avatar": "https://picsum.photos/200",
+                "status": "in_progress",
+                "category": "Speech",
+                "author": "Emma Thompson, PhD",
+                "description": "Develop essential public speaking skills, including proper pacing, voice modulation, and audience engagement. Learn techniques for delivering clear and impactful presentations."
+            },
+            {
+                "id": "5",
+                "name": "Leadership Fundamentals",
+                "avatar": "https://picsum.photos/200",
+                "status": "not_started",
+                "category": "Leadership",
+                "author": "Michael Roberts",
+                "description": "Learn core leadership principles including team motivation, decision-making, and delegation. Develop your personal leadership style and learn how to inspire and guide others effectively."
+            },
+            {
+                "id": "6",
+                "name": "Emotional Intelligence in the Workplace",
+                "avatar": "https://picsum.photos/200",
+                "status": "not_started",
+                "category": "Personal Development",
+                "author": "Dr. Lisa Kumar",
+                "description": "Master the art of emotional intelligence, including self-awareness, empathy, and relationship management. Learn to navigate workplace dynamics and build stronger professional relationships."
+            },
+            {
+                "id": "7",
+                "name": "Effective Time Management",
+                "avatar": "https://picsum.photos/200",
+                "status": "not_started",
+                "category": "Productivity",
+                "author": "Michael Roberts",
+                "description": "Discover practical strategies for prioritizing tasks, managing deadlines, and increasing productivity. Learn to balance multiple responsibilities while maintaining work-life harmony."
+            },
+            {
+                "id": "8",
+                "name": "Conflict Resolution Strategies",
+                "avatar": "https://picsum.photos/200",
+                "status": "not_started",
+                "category": "Communication",
+                "author": "Dr. Lisa Kumar",
+                "description": "Learn proven techniques for managing and resolving workplace conflicts. Develop skills in negotiation, mediation, and creating win-win solutions in challenging situations."
+            },
+            {
+                "id": "9",
+                "name": "Critical Thinking and Problem Solving",
+                "avatar": "https://picsum.photos/200",
+                "status": "not_started",
+                "category": "Analytical Skills",
+                "author": "Prof. James Martinez",
+                "description": "Enhance your analytical and problem-solving capabilities through structured thinking frameworks. Learn to approach challenges systematically and make well-reasoned decisions."
+            }
+        ]
+    }
+}

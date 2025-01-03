@@ -136,16 +136,7 @@ export function Login() {
                   "Sign in with SSO"
                 )}
               </Button>
-
-              <Button
-                variant="outline"
-                className="w-full flex items-center justify-center gap-2 text-[clamp(0.875rem,2vw,1rem)] text-purple-600 dark:text-purple-400 hover:bg-purple-500/5 border-purple-200/20 transition-colors rounded-xl h-[clamp(2.5rem,6vw,3rem)]"
-                onClick={() => navigate('/versant-test')}
-              >
-                <Mic className="w-4 h-4" />
-                Try Versant Test Demo
-              </Button>
-
+              
               <div className="relative py-2">
                 <div className="absolute inset-0 flex items-center">
                   <span className="w-full border-t border-purple-200/20"></span>

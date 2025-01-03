@@ -27,5 +27,6 @@ jobs:
           --build-arg VITE_AZURE_OPENAI_API_KEY=${{secrets.VITE_AZURE_OPENAI_API_KEY}} \
           --build-arg VITE_AZURE_OPENAI_ENDPOINT=${{secrets.VITE_AZURE_OPENAI_ENDPOINT}} \
           --build-arg VITE_AZURE_OPENAI_VOICE_DEPLOYMENT_NAME=${{secrets.VITE_AZURE_OPENAI_VOICE_DEPLOYMENT_NAME}} \
+          --build-arg VITE_AZURE_OPENAI_GENERAL_DEPLOYMENT_NAME=${{secrets.VITE_AZURE_OPENAI_GENERAL_DEPLOYMENT_NAME}} \
           -t ${{ secrets.AZURE_CONTAINER_REGISTRY_NAME }}.azurecr.io/rhetorica-frontend:latest .
         docker push ${{ secrets.AZURE_CONTAINER_REGISTRY_NAME }}.azurecr.io/rhetorica-frontend:latest

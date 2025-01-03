@@ -10,6 +10,7 @@ import { CoursesPage } from "./pages/employee/courses";
 import { AllCoursesPage } from "./pages/employee/all-courses";
 import { CourseDetails } from "./pages/employee/course-details";
 import ChatInterface from "./pages/employee/voice-model";
+import ConversationReport from "./pages/employee/conversation-report";
 
 export default function App() {
   return (
@@ -40,6 +41,7 @@ export default function App() {
                 <Route path="all-courses" element={<AllCoursesPage />} />
                 <Route path="courses/:courseId" element={<CourseDetails />} />
                 <Route path="voice-test/:courseId" element={<ChatInterface />} />
+                <Route path="conversation-report" element={<ConversationReport />} />
                 {/* Add other employee routes here */}
                 <Route path="*" element={<Navigate to="/employee/dashboard" replace />} />
               </Routes>

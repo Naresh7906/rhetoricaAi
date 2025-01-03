@@ -5,12 +5,19 @@ import { ProtectedRoute } from "./components/auth/protected-route";
 import { Login } from "./pages/login";
 import { RhetoricaTest } from "./pages/rhetorica-test";
 import { HRDashboard } from "./pages/hr/dashboard";
+import { EmployeesPage } from "./pages/hr/employees";
+import { EmployeeDetails } from "./pages/hr/employee-details";
+import { CoursesPage } from "./pages/hr/courses";
+import { HRCourseDetails } from "./pages/hr/course-details";
+import { ReportsPage } from "./pages/hr/reports";
+import { ReportDetails } from "./pages/hr/report-details";
 import { EmployeeDashboard } from "./pages/employee/dashboard";
-import { CoursesPage } from "./pages/employee/courses";
+import { CoursesPage as EmployeeCoursesPage } from "./pages/employee/courses";
 import { AllCoursesPage } from "./pages/employee/all-courses";
 import { CourseDetails } from "./pages/employee/course-details";
 import ChatInterface from "./pages/employee/voice-model";
 import ConversationReport from "./pages/employee/conversation-report";
+import { HRLayout } from "./layouts/hr-layout";
 
 export default function App() {
   return (
@@ -24,11 +31,19 @@ export default function App() {
           {/* HR Routes */}
           <Route path="/hr/*" element={
             <ProtectedRoute allowedRole="hr">
-              <Routes>
-                <Route path="dashboard" element={<HRDashboard />} />
-                {/* Add other HR routes here */}
-                <Route path="*" element={<Navigate to="/hr/dashboard" replace />} />
-              </Routes>
+              <HRLayout>
+                <Routes>
+                  <Route path="dashboard" element={<HRDashboard />} />
+                  <Route path="employees" element={<EmployeesPage />} />
+                  <Route path="employees/:employeeId" element={<EmployeeDetails />} />
+                  <Route path="courses" element={<CoursesPage />} />
+                  <Route path="courses/:courseId" element={<HRCourseDetails />} />
+                  <Route path="reports" element={<ReportsPage />} />
+                  <Route path="reports/:empId/:testDate" element={<ReportDetails />} />
+                  {/* Add other HR routes here */}
+                  <Route path="*" element={<Navigate to="/hr/dashboard" replace />} />
+                </Routes>
+              </HRLayout>
             </ProtectedRoute>
           } />
           
@@ -37,7 +52,7 @@ export default function App() {
             <ProtectedRoute allowedRole="employee">
               <Routes>
                 <Route path="dashboard" element={<EmployeeDashboard />} />
-                <Route path="courses" element={<CoursesPage />} />
+                <Route path="courses" element={<EmployeeCoursesPage />} />
                 <Route path="all-courses" element={<AllCoursesPage />} />
                 <Route path="courses/:courseId" element={<CourseDetails />} />
                 <Route path="voice-test/:courseId" element={<ChatInterface />} />

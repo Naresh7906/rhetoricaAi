@@ -1,0 +1,227 @@
+[
+    {
+        "emp_id": 1,
+        "testDate": "2025-01-03",
+        "overallScore": 75,
+        "scores": {
+            "pronunciation": 80,
+            "fluency": 78,
+            "sentenceMastery": 72,
+            "vocabulary": 74,
+            "comprehension": 76
+        },
+        "detailedFeedback": {
+            "pronunciation": "The test taker has clear and accurate pronunciation with minor errors.",
+            "fluency": "The test taker speaks smoothly with occasional hesitations.",
+            "sentenceMastery": "The test taker constructs sentences correctly but with some grammatical errors.",
+            "vocabulary": "The test taker has a good range of vocabulary but occasionally uses incorrect words.",
+            "comprehension": "The test taker understands most of the spoken content with minor misunderstandings."
+        },
+        "recommendations": [
+            "Practice speaking with native speakers to improve pronunciation and fluency.",
+            "Engage in grammar exercises to enhance sentence mastery.",
+            "Expand vocabulary by reading and listening to diverse content.",
+            "Participate in listening exercises to improve comprehension skills."
+        ]
+    },
+    {
+        "emp_id": 2,
+        "testDate": "2024-03-02",
+        "overallScore": 77,
+        "scores": {
+            "pronunciation": 82,
+            "fluency": 69,
+            "sentenceMastery": 60,
+            "vocabulary": 64,
+            "comprehension": 63
+        },
+        "detailedFeedback": {
+            "pronunciation": "The test taker has clear and accurate pronunciation with minor errors.",
+            "fluency": "The test taker speaks smoothly with occasional hesitations.",
+            "sentenceMastery": "The test taker constructs sentences correctly but with some grammatical errors.",
+            "vocabulary": "The test taker has a good range of vocabulary but occasionally uses incorrect words.",
+            "comprehension": "The test taker understands most of the spoken content with minor misunderstandings."
+        },
+        "recommendations": [
+            "Practice speaking with native speakers to improve pronunciation and fluency.",
+            "Engage in grammar exercises to enhance sentence mastery.",
+            "Expand vocabulary by reading and listening to diverse content.",
+            "Participate in listening exercises to improve comprehension skills."
+        ]
+    },
+    {
+        "emp_id": 3,
+        "testDate": "2024-06-15",
+        "overallScore": 82,
+        "scores": {
+            "pronunciation": 78,
+            "fluency": 85,
+            "sentenceMastery": 80,
+            "vocabulary": 79,
+            "comprehension": 81
+        },
+        "detailedFeedback": {
+            "pronunciation": "The test taker has clear and accurate pronunciation with minor errors.",
+            "fluency": "The test taker speaks smoothly with occasional hesitations.",
+            "sentenceMastery": "The test taker constructs sentences correctly but with some grammatical errors.",
+            "vocabulary": "The test taker has a good range of vocabulary but occasionally uses incorrect words.",
+            "comprehension": "The test taker understands most of the spoken content with minor misunderstandings."
+        },
+        "recommendations": [
+            "Practice speaking with native speakers to improve pronunciation and fluency.",
+            "Engage in grammar exercises to enhance sentence mastery.",
+            "Expand vocabulary by reading and listening to diverse content.",
+            "Participate in listening exercises to improve comprehension skills."
+        ]
+    },
+    {
+        "emp_id": 4,
+        "testDate": "2024-09-21",
+        "overallScore": 79,
+        "scores": {
+            "pronunciation": 75,
+            "fluency": 80,
+            "sentenceMastery": 77,
+            "vocabulary": 76,
+            "comprehension": 78
+        },
+        "detailedFeedback": {
+            "pronunciation": "The test taker has clear and accurate pronunciation with minor errors.",
+            "fluency": "The test taker speaks smoothly with occasional hesitations.",
+            "sentenceMastery": "The test taker constructs sentences correctly but with some grammatical errors.",
+            "vocabulary": "The test taker has a good range of vocabulary but occasionally uses incorrect words.",
+            "comprehension": "The test taker understands most of the spoken content with minor misunderstandings."
+        },
+        "recommendations": [
+            "Practice speaking with native speakers to improve pronunciation and fluency.",
+            "Engage in grammar exercises to enhance sentence mastery.",
+            "Expand vocabulary by reading and listening to diverse content.",
+            "Participate in listening exercises to improve comprehension skills."
+        ]
+    },
+    {
+        "emp_id": 5,
+        "testDate": "2024-11-09",
+        "overallScore": 90,
+        "scores": {
+            "pronunciation": 77,
+            "fluency": 84,
+            "sentenceMastery": 61,
+            "vocabulary": 86,
+            "comprehension": 75
+        },
+        "detailedFeedback": {
+            "pronunciation": "The test taker has clear and accurate pronunciation with minor errors.",
+            "fluency": "The test taker speaks smoothly with occasional hesitations.",
+            "sentenceMastery": "The test taker constructs sentences correctly but with some grammatical errors.",
+            "vocabulary": "The test taker has a good range of vocabulary but occasionally uses incorrect words.",
+            "comprehension": "The test taker understands most of the spoken content with minor misunderstandings."
+        },
+        "recommendations": [
+            "Practice speaking with native speakers to improve pronunciation and fluency.",
+            "Engage in grammar exercises to enhance sentence mastery.",
+            "Expand vocabulary by reading and listening to diverse content.",
+            "Participate in listening exercises to improve comprehension skills."
+        ]
+    },
+    {
+        "emp_id": 6,
+        "testDate": "2024-01-18",
+        "overallScore": 85,
+        "scores": {
+            "pronunciation": 83,
+            "fluency": 79,
+            "sentenceMastery": 81,
+            "vocabulary": 80,
+            "comprehension": 82
+        },
+        "detailedFeedback": {
+            "pronunciation": "The test taker has clear and accurate pronunciation with minor errors.",
+            "fluency": "The test taker speaks smoothly with occasional hesitations.",
+            "sentenceMastery": "The test taker constructs sentences correctly but with some grammatical errors.",
+            "vocabulary": "The test taker has a good range of vocabulary but occasionally uses incorrect words.",
+            "comprehension": "The test taker understands most of the spoken content with minor misunderstandings."
+        },
+        "recommendations": [
+            "Practice speaking with native speakers to improve pronunciation and fluency.",
+            "Engage in grammar exercises to enhance sentence mastery.",
+            "Expand vocabulary by reading and listening to diverse content.",
+            "Participate in listening exercises to improve comprehension skills."
+        ]
+    },
+    {
+        "emp_id": 7,
+        "testDate": "2024-04-27",
+        "overallScore": 74,
+        "scores": {
+            "pronunciation": 70,
+            "fluency": 72,
+            "sentenceMastery": 73,
+            "vocabulary": 71,
+            "comprehension": 74
+        },
+        "detailedFeedback": {
+            "pronunciation": "The test taker has clear and accurate pronunciation with minor errors.",
+            "fluency": "The test taker speaks smoothly with occasional hesitations.",
+            "sentenceMastery": "The test taker constructs sentences correctly but with some grammatical errors.",
+            "vocabulary": "The test taker has a good range of vocabulary but occasionally uses incorrect words.",
+            "comprehension": "The test taker understands most of the spoken content with minor misunderstandings."
+        },
+        "recommendations": [
+            "Practice speaking with native speakers to improve pronunciation and fluency.",
+            "Engage in grammar exercises to enhance sentence mastery.",
+            "Expand vocabulary by reading and listening to diverse content.",
+            "Participate in listening exercises to improve comprehension skills."
+        ]
+    },
+    {
+        "emp_id": 8,
+        "testDate": "2024-07-05",
+        "overallScore": 81,
+        "scores": {
+            "pronunciation": 79,
+            "fluency": 77,
+            "sentenceMastery": 80,
+            "vocabulary": 78,
+            "comprehension": 80
+        },
+        "detailedFeedback": {
+            "pronunciation": "The test taker has clear and accurate pronunciation with minor errors.",
+            "fluency": "The test taker speaks smoothly with occasional hesitations.",
+            "sentenceMastery": "The test taker constructs sentences correctly but with some grammatical errors.",
+            "vocabulary": "The test taker has a good range of vocabulary but occasionally uses incorrect words.",
+            "comprehension": "The test taker understands most of the spoken content with minor misunderstandings."
+        },
+        "recommendations": [
+            "Practice speaking with native speakers to improve pronunciation and fluency.",
+            "Engage in grammar exercises to enhance sentence mastery.",
+            "Expand vocabulary by reading and listening to diverse content.",
+            "Participate in listening exercises to improve comprehension skills."
+        ]
+    },
+    {
+        "emp_id": 9,
+        "testDate": "2024-10-13",
+        "overallScore": 78,
+        "scores": {
+            "pronunciation": 76,
+            "fluency": 75,
+            "sentenceMastery": 77,
+            "vocabulary": 74,
+            "comprehension": 76
+        },
+        "detailedFeedback": {
+            "pronunciation": "The test taker has clear and accurate pronunciation with minor errors.",
+            "fluency": "The test taker speaks smoothly with occasional hesitations.",
+            "sentenceMastery": "The test taker constructs sentences correctly but with some grammatical errors.",
+            "vocabulary": "The test taker has a good range of vocabulary but occasionally uses incorrect words.",
+            "comprehension": "The test taker understands most of the spoken content with minor misunderstandings."
+        },
+        "recommendations": [
+            "Practice speaking with native speakers to improve pronunciation and fluency.",
+            "Engage in grammar exercises to enhance sentence mastery.",
+            "Expand vocabulary by reading and listening to diverse content.",
+            "Participate in listening exercises to improve comprehension skills."
+        ]
+    }
+]

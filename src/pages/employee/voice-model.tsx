@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Send, Mic, MicOff, Power, ChevronLeft } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { Mic, MicOff, Power, ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import {
@@ -11,8 +10,6 @@ import {
   RTResponse,
 } from "rt-client";
 import { AudioHandler } from "@/lib/audio";
-import { Card } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
@@ -25,39 +22,13 @@ export interface Message {
 const ChatInterface = () => {
   const navigate = useNavigate();
   const [isConnected, setIsConnected] = useState(false);
-  const [isConnecting, setIsConnecting] = useState(false);
+  const [, setIsConnecting] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
-  const [currentMessage, setCurrentMessage] = useState("");
   const [isRecording, setIsRecording] = useState(false);
   const [useVAD] = useState(true);
   const clientRef = useRef<RTClient | null>(null);
   const audioHandlerRef = useRef<AudioHandler | null>(null);
-  const [backstory, setBackstory] = useState(`Your Name: Rajesh Kumar from TechNova Solutions
-
-Background: You are Rajesh Kumar, a senior IT consultant at TechNova Solutions, a global IT consulting firm. You're exploring advanced AI solutions to enhance your service portfolio.
-
-Objective: Evaluate our generative AI model to address business challenges and create value for your clients.
-
-Key Areas of Interest:
-
-Customer Support Automation
-Data Analysis and Insights
-Content Generation
-Process Optimization
-Expectations:
-
-Detailed demo showcasing practical applications.
-Customization to meet specific needs.
-Integration with existing systems.
-Insights into implementation, ROI, and support services.
-Conversation Flow:
-
-Introduction: Introduce yourself and your role.
-Objective: State your objective and areas of interest.
-Questions: Ask about customization and integration.
-Implementation: Inquire about the process and ROI.
-Support: Ask about support services.
-Conclusion: Summarize takeaways and discuss next steps.`);
+  const [backstory, setBackstory] = useState("");
   const [showGetStarted, setShowGetStarted] = useState(true);
   const [isAISpeaking, setIsAISpeaking] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -168,34 +139,6 @@ Conclusion: Summarize takeaways and discuss next steps.`);
     }
   };
 
-  const sendMessage = async () => {
-    if (currentMessage.trim() && clientRef.current) {
-      try {
-        setMessages((prevMessages) => [
-          ...prevMessages,
-          {
-            type: "user",
-            content: currentMessage,
-          },
-        ]);
-
-        const messageContent = backstory && messages.length === 0
-          ? `[System: ${backstory}]\n\nUser: ${currentMessage}`
-          : currentMessage;
-
-        await clientRef.current.sendItem({
-          type: "message",
-          role: "user",
-          content: [{ type: "input_text", text: messageContent }],
-        });
-        await clientRef.current.generateResponse();
-        setCurrentMessage("");
-      } catch (error) {
-        console.error("Failed to send message:", error);
-      }
-    }
-  };
-
   const toggleRecording = async () => {
     if (!isRecording && clientRef.current) {
       try {
@@ -226,6 +169,34 @@ Conclusion: Summarize takeaways and discuss next steps.`);
   };
 
   useEffect(() => {
+
+    setBackstory(`Your Name: Rajesh Kumar from TechNova Solutions
+
+Background: You are Rajesh Kumar, a senior IT consultant at TechNova Solutions, a global IT consulting firm. You're exploring advanced AI solutions to enhance your service portfolio.
+
+Objective: Evaluate our generative AI model to address business challenges and create value for your clients.
+
+Key Areas of Interest:
+
+Customer Support Automation
+Data Analysis and Insights
+Content Generation
+Process Optimization
+Expectations:
+
+Detailed demo showcasing practical applications.
+Customization to meet specific needs.
+Integration with existing systems.
+Insights into implementation, ROI, and support services.
+Conversation Flow:
+
+Introduction: Introduce yourself and your role.
+Objective: State your objective and areas of interest.
+Questions: Ask about customization and integration.
+Implementation: Inquire about the process and ROI.
+Support: Ask about support services.
+Conclusion: Summarize takeaways and discuss next steps.`)
+
     const initAudioHandler = async () => {
       const handler = new AudioHandler();
       await handler.initialize();
@@ -272,18 +243,18 @@ Conclusion: Summarize takeaways and discuss next steps.`);
   const handleGetStarted = async () => {
     setShowGetStarted(false);
     await handleConnect();
-    
+
     // Wait for connection to establish
     setTimeout(async () => {
       if (clientRef.current) {
         const messageContent = `[System: ${backstory}]\n\nUser: Hi`;
-        
+
         await clientRef.current.sendItem({
           type: "message",
           role: "user",
           content: [{ type: "input_text", text: messageContent }],
         });
-        
+
         setMessages(prev => [...prev, { type: "user", content: "Hi" }]);
         await clientRef.current.generateResponse();
       }
@@ -361,7 +332,7 @@ Conclusion: Summarize takeaways and discuss next steps.`);
             <h2 className="text-lg font-semibold">Conversation Transcript</h2>
             <p className="text-sm text-muted-foreground">Your training session progress</p>
           </div>
-          
+
           <div className="flex-1 overflow-y-auto p-4">
             <div className="space-y-4">
               {messages.map((message, index) => (
@@ -380,7 +351,7 @@ Conclusion: Summarize takeaways and discuss next steps.`);
                   <div
                     className={cn(
                       "rounded-2xl px-4 py-2.5 max-w-[85%]",
-                      message.type === "user" 
+                      message.type === "user"
                         ? "bg-primary text-primary-foreground rounded-tr-none"
                         : "bg-muted rounded-tl-none"
                     )}
@@ -466,7 +437,7 @@ Conclusion: Summarize takeaways and discuss next steps.`);
             <p className="text-muted-foreground text-center mb-8">
               Ready to start your voice training session? Click below to begin the conversation.
             </p>
-            <Button 
+            <Button
               className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-12 text-lg"
               onClick={handleGetStarted}
             >

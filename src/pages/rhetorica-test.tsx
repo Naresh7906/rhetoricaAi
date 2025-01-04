@@ -1,9 +1,34 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Mic, PlayCircle, StopCircle, Volume2, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import testData from "@/templates/rhetorica.json";
+import { ReadAloudQuestion } from "@/components/rhetorica/ReadAloudQuestion";
+import { RepeatSentenceQuestion } from "@/components/rhetorica/RepeatSentenceQuestion";
+import { ShortAnswerQuestion } from "@/components/rhetorica/ShortAnswerQuestion";
+import { SentenceBuildQuestion } from "@/components/rhetorica/SentenceBuildQuestion";
+import { StoryRetellQuestion } from "@/components/rhetorica/StoryRetellQuestion";
+import { OpenQuestion } from "@/components/rhetorica/OpenQuestion";
+import { SituationResponseQuestion } from "@/components/rhetorica/SituationResponseQuestion";
+import { SentenceCompletionQuestion } from "@/components/rhetorica/SentenceCompletionQuestion";
+import { useRhetorica } from "@/contexts/rhetorica-context";
+import { SpeechEvaluationService } from "@/services/speechEvaluationService";
+
+interface BaseAnswer {
+  questionType: string;
+  timestamp: number;
+}
+
+interface AudioAnswer extends BaseAnswer {
+  questionType: "Read Aloud" | "Repeat Sentence" | "Short Answer" | "Story Retell" | "Open Question" | "Situation Response";
+  audioBlob: Blob;
+  duration: number;
+  scores?: {
+    pronunciation?: number;
+    fluency?: number;
+  };
+}
 
 interface BaseQuestion {
   type: string;
@@ -18,6 +43,7 @@ interface AudioQuestion extends BaseQuestion {
   type: "Repeat Sentence" | "Short Answer" | "Story Retell" | "Situation Response";
   audio: string;
   text: string;
+  solution: string;
 }
 
 interface SentenceBuildQuestion extends BaseQuestion {
@@ -26,7 +52,14 @@ interface SentenceBuildQuestion extends BaseQuestion {
   solution: string;
 }
 
-type Question = TextQuestion | AudioQuestion | SentenceBuildQuestion;
+interface SentenceCompletionQuestion extends BaseQuestion {
+  type: "Sentence Completion";
+  audio: string;
+  text: string;
+  solution: string;
+}
+
+type Question = TextQuestion | AudioQuestion | SentenceBuildQuestion | SentenceCompletionQuestion;
 
 interface Section {
   title: string;
@@ -35,16 +68,16 @@ interface Section {
   questions: Question[];
 }
 
-const isTextQuestion = (question: Question): question is TextQuestion => {
-  return question.type === "Read Aloud" || question.type === "Open Question";
-};
-
-const isAudioQuestion = (question: Question): question is AudioQuestion => {
-  return ["Repeat Sentence", "Short Answer", "Story Retell", "Situation Response"].includes(question.type);
-};
-
-const isSentenceBuildQuestion = (question: Question): question is SentenceBuildQuestion => {
-  return question.type === "Sentence Build";
+const needsRecording = (question: Question): boolean => {
+  return (
+    question.type === "Read Aloud" ||
+    question.type === "Repeat Sentence" ||
+    question.type === "Short Answer" ||
+    question.type === "Story Retell" ||
+    question.type === "Open Question" ||
+    question.type === "Situation Response" ||
+    question.type === "Sentence Completion"
+  );
 };
 
 export function RhetoricaTest() {
@@ -53,14 +86,67 @@ export function RhetoricaTest() {
   const [timeLeft, setTimeLeft] = useState(60);
   const [isPlaying, setIsPlaying] = useState(false);
   const [section, setSection] = useState(0);
-  const audioRef = useRef<HTMLAudioElement>(null);
+  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
+  const [currentBlob, setCurrentBlob] = useState<Blob | undefined>(undefined);
+  const chunksRef = useRef<Blob[]>([]);
   const navigate = useNavigate();
+  const { 
+    addAudioAnswer, 
+    addSentenceBuildAnswer, 
+    addSentenceCompletionAnswer,
+    getSectionAnswers,
+    updateScores 
+  } = useRhetorica();
+  const speechEvaluationService = new SpeechEvaluationService();
 
   const sections = testData.sections as Section[];
-
   const currentSection = sections[section];
   const currentQuestion = currentSection?.questions[step];
   const totalQuestions = currentSection?.questions.length || 0;
+
+  // Add new state for section completion
+  const [isEvaluating, setIsEvaluating] = useState(false);
+
+  // Initialize media recorder
+  useEffect(() => {
+    async function initMediaRecorder() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const recorder = new MediaRecorder(stream, {
+          mimeType: 'audio/webm;codecs=opus'
+        });
+        
+        recorder.ondataavailable = (e) => {
+          if (e.data.size > 0) {
+            console.log("Recording chunk received:", {
+              size: e.data.size,
+              type: e.data.type,
+              timestamp: new Date().toISOString()
+            });
+            chunksRef.current.push(e.data);
+          }
+        };
+
+        recorder.onstop = () => {
+          console.log("Recording stopped, chunks:", chunksRef.current.length);
+          const audioBlob = new Blob(chunksRef.current, { type: 'audio/webm;codecs=opus' });
+          console.log("Created audio blob:", {
+            size: audioBlob.size,
+            type: audioBlob.type
+          });
+          setCurrentBlob(audioBlob);
+          // Reset chunks for next recording
+          chunksRef.current = [];
+        };
+
+        setMediaRecorder(recorder);
+      } catch (err) {
+        console.error("Error accessing microphone:", err);
+      }
+    }
+
+    initMediaRecorder();
+  }, []);
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -68,21 +154,95 @@ export function RhetoricaTest() {
       timer = setInterval(() => {
         setTimeLeft((prev) => prev - 1);
       }, 1000);
+    } else if (timeLeft === 0 && isRecording) {
+      handleRecord(); // Stop recording when time is up
     }
     return () => clearInterval(timer);
   }, [timeLeft, isRecording]);
 
   const handleRecord = () => {
+    if (!mediaRecorder) return;
+
+    if (isRecording) {
+      console.log("Stopping recording...");
+      mediaRecorder.stop();
+    } else {
+      console.log("Starting recording...");
+      chunksRef.current = [];  // Reset chunks ref
+      setCurrentBlob(undefined);
+      mediaRecorder.start(1000); // Record in 1-second chunks
+    }
     setIsRecording(!isRecording);
     if (!isRecording) {
       setTimeLeft(currentSection.time);
     }
   };
 
-  const handlePlayAudio = () => {
-    if (audioRef.current) {
-      audioRef.current.play();
-      setIsPlaying(true);
+  const handleReadAloudEvaluation = (scores: { pronunciation: number; fluency: number; transcript: string }) => {
+    if (currentBlob && currentQuestion.type === "Read Aloud") {
+      console.log("Read Aloud Evaluation Results:", {
+        scores,
+        referenceText: currentQuestion.text,
+        questionIndex: step + 1
+      });
+
+      addAudioAnswer(
+        section,
+        step,
+        "Read Aloud",
+        currentBlob,
+        timeLeft,
+        {
+          pronunciation: scores.pronunciation,
+          fluency: scores.fluency,
+          transcript: scores.transcript
+        }
+      );
+      handleNext();
+      setCurrentBlob(undefined);
+    }
+  };
+
+  const handleSectionComplete = async () => {
+    if (currentSection.title === "Section A: Reading") {
+      setIsEvaluating(true);
+      const sectionAnswers = getSectionAnswers(section);
+      
+      if (sectionAnswers) {
+        console.log("Evaluating Section A recordings...");
+        
+        for (const [questionIndex, answer] of Object.entries(sectionAnswers)) {
+          if (answer.questionType === "Read Aloud") {
+            const audioAnswer = answer as AudioAnswer;
+            const question = currentSection.questions[parseInt(questionIndex)] as TextQuestion;
+            try {
+              console.log(`Evaluating question ${parseInt(questionIndex) + 1}...`);
+              const scores = await speechEvaluationService.evaluateReading(
+                audioAnswer.audioBlob,
+                question.text
+              );
+              
+              updateScores(section, parseInt(questionIndex), {
+                pronunciation: scores.pronunciation,
+                fluency: scores.fluency
+              });
+
+              console.log(`Question ${parseInt(questionIndex) + 1} scores:`, {
+                pronunciation: scores.pronunciation,
+                fluency: scores.fluency
+              });
+            } catch (error) {
+              console.error(`Error evaluating question ${parseInt(questionIndex) + 1}:`, error);
+            }
+          }
+        }
+        
+        // Log final results
+        const finalAnswers = getSectionAnswers(section);
+        console.log("Section A final results:", finalAnswers);
+      }
+      
+      setIsEvaluating(false);
     }
   };
 
@@ -91,12 +251,42 @@ export function RhetoricaTest() {
       setStep(step + 1);
       setTimeLeft(currentSection.time);
     } else if (section < sections.length - 1) {
-      setSection(section + 1);
-      setStep(0);
-      setTimeLeft(sections[section + 1].time);
+      // Evaluate section before moving to next
+      handleSectionComplete().then(() => {
+        setSection(section + 1);
+        setStep(0);
+        setTimeLeft(sections[section + 1].time);
+      });
+    } else {
+      // Handle test completion
+      handleSectionComplete().then(() => {
+        // Navigate or show results
+        console.log("Test completed!");
+      });
     }
     setIsRecording(false);
     setIsPlaying(false);
+  };
+
+  const handleComplete = () => {
+    setTimeout(() => {
+      handleNext();
+    }, 1500);
+  };
+
+  const handleSentenceBuildComplete = (arrangedWords: string[], isCorrect: boolean, attempts: number) => {
+    addSentenceBuildAnswer(section, step, arrangedWords, isCorrect, attempts);
+    handleComplete();
+  };
+
+  const handleSentenceCompletionComplete = (
+    textAnswer: string,
+    audioBlob: Blob,
+    isCorrect: boolean,
+    attempts: number
+  ) => {
+    addSentenceCompletionAnswer(section, step, textAnswer, audioBlob, isCorrect, attempts);
+    handleComplete();
   };
 
   return (
@@ -147,92 +337,120 @@ export function RhetoricaTest() {
 
         {/* Question content */}
         <div className="mb-8 p-8 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 shadow-xl">
-          {isTextQuestion(currentQuestion) && (
-            <p className="text-xl leading-relaxed">{currentQuestion.text}</p>
+          {currentQuestion.type === "Read Aloud" && (
+            <ReadAloudQuestion
+              text={currentQuestion.text}
+              isRecording={isRecording}
+              onRecord={handleRecord}
+              timeLeft={timeLeft}
+              onEvaluationComplete={handleReadAloudEvaluation}
+              recordedBlob={currentBlob}
+            />
           )}
-          {isAudioQuestion(currentQuestion) && (
-            <div className="space-y-6">
-              <Button
-                variant="outline"
-                className="w-full h-20 text-lg hover:bg-purple-500/5"
-                onClick={handlePlayAudio}
-                disabled={isPlaying}
-              >
-                {isPlaying ? (
-                  <>
-                    <Volume2 className="w-8 h-8 text-purple-500 animate-pulse mr-3" />
-                    <span>Playing Audio...</span>
-                  </>
-                ) : (
-                  <>
-                    <PlayCircle className="w-8 h-8 text-purple-500 mr-3" />
-                    <span>Play Audio</span>
-                  </>
-                )}
-              </Button>
-              <audio
-                ref={audioRef}
-                src={currentQuestion.audio}
-                onEnded={() => setIsPlaying(false)}
-                className="hidden"
-              />
-              <p className="text-muted-foreground text-lg italic text-center">
-                {currentQuestion.text}
-              </p>
-            </div>
+          {currentQuestion.type === "Repeat Sentence" && (
+            <RepeatSentenceQuestion
+              audio={currentQuestion.audio}
+              solution={currentQuestion.solution || ""}
+              isRecording={isRecording}
+              isPlaying={isPlaying}
+              onRecord={handleRecord}
+              onPlayComplete={() => setIsPlaying(false)}
+              timeLeft={timeLeft}
+            />
           )}
-          {isSentenceBuildQuestion(currentQuestion) && (
-            <div className="space-y-6">
-              <div className="flex flex-wrap gap-3 justify-center">
-                {currentQuestion.words.map((word: string, index: number) => (
-                  <div
-                    key={index}
-                    className="px-4 py-2 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400 text-lg font-medium hover:bg-purple-500/20 cursor-pointer transition-colors"
-                  >
-                    {word}
-                  </div>
-                ))}
-              </div>
-              <p className="text-center text-muted-foreground">
-                Arrange these words to form a complete sentence
-              </p>
-            </div>
+          {currentQuestion.type === "Short Answer" && (
+            <ShortAnswerQuestion
+              audio={currentQuestion.audio}
+              text={currentQuestion.text}
+              isRecording={isRecording}
+              isPlaying={isPlaying}
+              onRecord={handleRecord}
+              onPlayComplete={() => setIsPlaying(false)}
+              timeLeft={timeLeft}
+            />
+          )}
+          {currentQuestion.type === "Sentence Build" && (
+            <SentenceBuildQuestion
+              words={currentQuestion.words}
+              solution={currentQuestion.solution}
+              onComplete={(arrangedWords, isCorrect, attempts) => 
+                handleSentenceBuildComplete(arrangedWords, isCorrect, attempts)
+              }
+            />
+          )}
+          {currentQuestion.type === "Story Retell" && (
+            <StoryRetellQuestion
+              audio={currentQuestion.audio}
+              text={currentQuestion.text}
+              isRecording={isRecording}
+              isPlaying={isPlaying}
+              onRecord={handleRecord}
+              onPlayComplete={() => setIsPlaying(false)}
+              timeLeft={timeLeft}
+            />
+          )}
+          {currentQuestion.type === "Open Question" && (
+            <OpenQuestion
+              text={currentQuestion.text}
+              isRecording={isRecording}
+              onRecord={handleRecord}
+              timeLeft={timeLeft}
+            />
+          )}
+          {currentQuestion.type === "Situation Response" && (
+            <SituationResponseQuestion
+              audio={currentQuestion.audio}
+              text={currentQuestion.text}
+              isRecording={isRecording}
+              isPlaying={isPlaying}
+              onRecord={handleRecord}
+              onPlayComplete={() => setIsPlaying(false)}
+              timeLeft={timeLeft}
+            />
+          )}
+          {currentQuestion.type === "Sentence Completion" && (
+            <SentenceCompletionQuestion
+              text={currentQuestion.text}
+              audio={currentQuestion.audio}
+              solution={currentQuestion.solution}
+              isRecording={isRecording}
+              isPlaying={isPlaying}
+              onRecord={handleRecord}
+              onPlayComplete={() => setIsPlaying(false)}
+              timeLeft={timeLeft}
+              onComplete={(textAnswer, audioBlob, isCorrect, attempts) =>
+                handleSentenceCompletionComplete(textAnswer, audioBlob, isCorrect, attempts)
+              }
+            />
           )}
         </div>
 
-        {/* Controls */}
-        <div className="flex gap-4 max-w-2xl mx-auto">
-          <Button
-            className={`flex-1 h-16 text-lg ${
-              isRecording
-                ? "bg-red-500 hover:bg-red-600"
-                : "bg-purple-600 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-700"
-            } transition-colors`}
-            onClick={handleRecord}
-          >
-            {isRecording ? (
-              <>
-                <StopCircle className="w-6 h-6 mr-2" />
-                Stop Recording
-              </>
-            ) : (
-              <>
-                <Mic className="w-6 h-6 mr-2" />
-                Start Recording
-              </>
-            )}
-          </Button>
-          <Button
-            className="flex-1 h-16 text-lg bg-primary/10 hover:bg-primary/20 text-primary"
-            onClick={handleNext}
-            disabled={section === sections.length - 1 && step === totalQuestions - 1}
-          >
-            {section === sections.length - 1 && step === totalQuestions - 1
-              ? "Finish Test"
-              : "Next Question"}
-          </Button>
-        </div>
+        {/* Next button - only show for sections that need recording except Sentence Build and Completion */}
+        {needsRecording(currentQuestion) && 
+         currentQuestion.type !== "Sentence Build" && 
+         currentQuestion.type !== "Sentence Completion" && (
+          <div className="flex justify-center">
+            <Button
+              className="h-12 px-8 text-lg bg-primary/10 hover:bg-primary/20 text-primary"
+              onClick={handleNext}
+              disabled={section === sections.length - 1 && step === totalQuestions - 1}
+            >
+              {section === sections.length - 1 && step === totalQuestions - 1
+                ? "Finish Test"
+                : "Next Question"}
+            </Button>
+          </div>
+        )}
       </main>
+
+      {/* Add evaluation indicator */}
+      {isEvaluating && (
+        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-card p-6 rounded-lg shadow-xl">
+            <p className="text-lg">Evaluating section recordings...</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 } 

@@ -35,27 +35,27 @@
         {
           "type": "Repeat Sentence",
           "audio": "/audio/rhetorica/repeat1.mp3",
-          "text": "The local community has organized several events to promote cultural diversity."
+          "solution": "The local community has organized several events to promote cultural diversity."
         },
         {
           "type": "Repeat Sentence",
           "audio": "/audio/rhetorica/repeat2.mp3",
-          "text": "The research team discovered a breakthrough in renewable energy technology."
+          "solution": "The research team discovered a breakthrough in renewable energy technology."
         },
         {
           "type": "Repeat Sentence",
           "audio": "/audio/rhetorica/repeat3.mp3",
-          "text": "The university library will be closed for renovations next week."
+          "solution": "The university library will be closed for renovations next week."
         },
         {
           "type": "Repeat Sentence",
           "audio": "/audio/rhetorica/repeat4.mp3",
-          "text": "Please remember to submit your assignments before the deadline."
+          "solution": "Please remember to submit your assignments before the deadline."
         },
         {
           "type": "Repeat Sentence",
           "audio": "/audio/rhetorica/repeat5.mp3",
-          "text": "The conference call has been rescheduled to tomorrow morning."
+          "solution": "The conference call has been rescheduled to tomorrow morning."
         }
       ]
     },

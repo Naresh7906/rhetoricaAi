@@ -12,18 +12,6 @@
         {
           "type": "Read Aloud",
           "text": "Recent technological advancements in artificial intelligence and machine learning have revolutionized how businesses approach data analysis and decision-making processes."
-        },
-        {
-          "type": "Read Aloud",
-          "text": "According to recent economic reports, small businesses have shown remarkable resilience during the post-pandemic recovery period."
-        },
-        {
-          "type": "Read Aloud",
-          "text": "Environmental scientists are conducting extensive research on the impact of microplastics in marine ecosystems."
-        },
-        {
-          "type": "Read Aloud",
-          "text": "The integration of virtual reality technology in educational settings has demonstrated significant improvements in student engagement."
         }
       ]
     },
@@ -41,21 +29,6 @@
           "type": "Repeat Sentence",
           "audio": "/audio/rhetorica/repeat2.mp3",
           "solution": "The research team discovered a breakthrough in renewable energy technology."
-        },
-        {
-          "type": "Repeat Sentence",
-          "audio": "/audio/rhetorica/repeat3.mp3",
-          "solution": "The university library will be closed for renovations next week."
-        },
-        {
-          "type": "Repeat Sentence",
-          "audio": "/audio/rhetorica/repeat4.mp3",
-          "solution": "Please remember to submit your assignments before the deadline."
-        },
-        {
-          "type": "Repeat Sentence",
-          "audio": "/audio/rhetorica/repeat5.mp3",
-          "solution": "The conference call has been rescheduled to tomorrow morning."
         }
       ]
     },
@@ -68,11 +41,6 @@
           "type": "Short Answer",
           "audio": "/audio/rhetorica/short1.mp3",
           "text": "What would you do if you found a lost wallet on the street?"
-        },
-        {
-          "type": "Short Answer",
-          "audio": "/audio/rhetorica/short2.mp3",
-          "text": "How do you usually spend your weekends?"
         }
       ]
     },
@@ -102,11 +70,6 @@
           "type": "Story Retell",
           "audio": "/audio/rhetorica/story1.mp3",
           "text": "Listen to a short story about a community project..."
-        },
-        {
-          "type": "Story Retell",
-          "audio": "/audio/rhetorica/story2.mp3",
-          "text": "Listen to a short story about a scientific discovery..."
         }
       ]
     },
@@ -134,11 +97,6 @@
           "type": "Situation Response",
           "audio": "/audio/rhetorica/situation1.mp3",
           "text": "Your colleague seems stressed about an upcoming presentation. What would you say?"
-        },
-        {
-          "type": "Situation Response",
-          "audio": "/audio/rhetorica/situation2.mp3",
-          "text": "A customer is complaining about a delayed service. How would you respond?"
         }
       ]
     },

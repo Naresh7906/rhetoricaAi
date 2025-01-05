@@ -3,13 +3,13 @@
     {
       "id": "1",
       "title": "Vocabulary : Mastering the Basics",
-      "avatar": "https://picsum.photos/200",
+      "avatar": "https://loremflickr.com/200/200?random",
       "status": "completed",
       "category": "Vocabulary",
       "author": {
         "name": "Dr. Sarah Chen",
         "role": "Language Department",
-        "avatar": "https://picsum.photos/200"
+        "avatar": "https://loremflickr.com/200/200?random=2"
       },
       "progress": 100,
       "description": "Learn fundamental vocabulary concepts including word families, common prefixes and suffixes, and essential everyday terms. This course builds a strong foundation for effective communication.",
@@ -19,7 +19,7 @@
           "title": "Introduction to Word Families",
           "completed": true,
           "duration": "15 min",
-          "videoUrl": "/videos/vocabulary/intro.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Word Families Chart", "Practice Worksheet"],
           "hasQuiz": true
         },
@@ -28,7 +28,7 @@
           "title": "Prefixes and Suffixes",
           "completed": true,
           "duration": "20 min",
-          "videoUrl": "/videos/vocabulary/prefixes.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Prefix-Suffix Guide", "Exercise Sheet"],
           "hasQuiz": true
         },
@@ -37,7 +37,7 @@
           "title": "Essential Business Vocabulary",
           "completed": true,
           "duration": "25 min",
-          "videoUrl": "/videos/vocabulary/business.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Business Terms PDF", "Practice Tests"],
           "hasQuiz": true
         }
@@ -58,13 +58,13 @@
     {
       "id": "2",
       "title": "Pronunciation : Mastering the Basics",
-      "avatar": "https://picsum.photos/200",
+      "avatar": "https://loremflickr.com/200/200?random=3",
       "status": "completed",
       "category": "Pronunciation",
       "author": {
         "name": "Prof. James Martinez",
         "role": "Phonetics Department",
-        "avatar": "https://picsum.photos/200"
+        "avatar": "https://loremflickr.com/200/200?random"
       },
       "progress": 100,
       "description": "Master the basics of pronunciation including phonemes, stress patterns, and intonation. Practice with interactive exercises to improve clarity and confidence in speaking.",
@@ -74,7 +74,7 @@
           "title": "Understanding Phonemes",
           "completed": true,
           "duration": "20 min",
-          "videoUrl": "/videos/pronunciation/phonemes.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Phoneme Chart", "Audio Exercises"],
           "hasQuiz": true
         },
@@ -83,7 +83,7 @@
           "title": "Stress Patterns",
           "completed": true,
           "duration": "25 min",
-          "videoUrl": "/videos/pronunciation/stress.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Stress Pattern Guide", "Practice Recording"],
           "hasQuiz": true
         },
@@ -92,7 +92,7 @@
           "title": "Intonation Techniques",
           "completed": true,
           "duration": "30 min",
-          "videoUrl": "/videos/pronunciation/intonation.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Intonation Guide", "Speaking Exercises"],
           "hasQuiz": true
         }
@@ -113,13 +113,13 @@
     {
       "id": "3",
       "title": "Speech : Mastering the Basics",
-      "avatar": "https://picsum.photos/200",
+      "avatar": "https://loremflickr.com/200/200?random",
       "status": "in_progress",
       "category": "Speech",
       "author": {
         "name": "Emma Thompson, PhD",
         "role": "Speech Department",
-        "avatar": "https://picsum.photos/200"
+        "avatar": "https://loremflickr.com/200/200?random"
       },
       "progress": 45,
       "description": "Develop essential public speaking skills, including proper pacing, voice modulation, and audience engagement. Learn techniques for delivering clear and impactful presentations.",
@@ -129,7 +129,7 @@
           "title": "Voice Modulation Basics",
           "completed": true,
           "duration": "20 min",
-          "videoUrl": "/videos/speech/modulation.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Voice Exercise Guide", "Practice Recordings"],
           "hasQuiz": true
         },
@@ -138,7 +138,7 @@
           "title": "Pacing and Rhythm",
           "completed": true,
           "duration": "25 min",
-          "videoUrl": "/videos/speech/pacing.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf", 
           "resources": ["Rhythm Patterns", "Speech Examples"],
           "hasQuiz": true
         },
@@ -147,7 +147,7 @@
           "title": "Audience Engagement",
           "completed": false,
           "duration": "30 min",
-          "videoUrl": "/videos/speech/engagement.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Engagement Techniques", "Practice Scenarios"],
           "hasQuiz": true
         }
@@ -168,13 +168,13 @@
     {
       "id": "4",
       "title": "Certification : Mastering the Basics",
-      "avatar": "https://picsum.photos/200",
+      "avatar": "https://loremflickr.com/200/200?random",
       "status": "not_started",
       "category": "Certification",
       "author": {
         "name": "Dr. Sarah Chen",
         "role": "Language Department",
-        "avatar": "https://picsum.photos/200"
+        "avatar": "https://loremflickr.com/200/200?random"
       },
       "progress": 0,
       "description": "Earn a certification in English language skills, demonstrating your proficiency in English. This credential is valuable in the job market and can enhance your career opportunities.",
@@ -184,7 +184,7 @@
           "title": "Certification Overview",
           "completed": false,
           "duration": "15 min",
-          "videoUrl": "/videos/certification/overview.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Certification Guide", "Study Plan"],
           "hasQuiz": true
         },
@@ -193,7 +193,7 @@
           "title": "Practice Assessment",
           "completed": false,
           "duration": "45 min",
-          "videoUrl": "/videos/certification/practice.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Sample Questions", "Assessment Tips"],
           "hasQuiz": true
         },
@@ -202,7 +202,7 @@
           "title": "Final Certification Exam",
           "completed": false,
           "duration": "60 min",
-          "videoUrl": "/videos/certification/final.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Exam Guidelines", "Preparation Materials"],
           "hasQuiz": true
         }
@@ -223,13 +223,13 @@
     {
       "id": "5",
       "title": "Leadership Fundamentals",
-      "avatar": "https://picsum.photos/200",
+      "avatar": "https://loremflickr.com/200/200?random",
       "status": "not_started",
       "category": "Leadership",
       "author": {
         "name": "Michael Roberts",
         "role": "Leadership Development",
-        "avatar": "https://picsum.photos/200"
+        "avatar": "https://loremflickr.com/200/200?random"
       },
       "progress": 0,
       "description": "Learn core leadership principles including team motivation, decision-making, and delegation. Develop your personal leadership style and learn how to inspire and guide others effectively.",
@@ -239,7 +239,7 @@
           "title": "Understanding Leadership Styles",
           "completed": false,
           "duration": "25 min",
-          "videoUrl": "/videos/leadership/styles.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Leadership Styles Guide", "Self-Assessment"],
           "hasQuiz": true
         },
@@ -248,7 +248,7 @@
           "title": "Team Motivation Techniques",
           "completed": false,
           "duration": "30 min",
-          "videoUrl": "/videos/leadership/motivation.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Motivation Strategies", "Case Studies"],
           "hasQuiz": true
         },
@@ -257,7 +257,7 @@
           "title": "Effective Delegation",
           "completed": false,
           "duration": "20 min",
-          "videoUrl": "/videos/leadership/delegation.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Delegation Framework", "Practice Exercises"],
           "hasQuiz": true
         }
@@ -278,13 +278,13 @@
     {
       "id": "6",
       "title": "Emotional Intelligence in the Workplace",
-      "avatar": "https://picsum.photos/200",
+      "avatar": "https://loremflickr.com/200/200?random",
       "status": "not_started",
       "category": "Personal Development",
       "author": {
         "name": "Dr. Lisa Kumar",
         "role": "Organizational Psychology",
-        "avatar": "https://picsum.photos/200"
+        "avatar": "https://loremflickr.com/200/200?random"
       },
       "progress": 0,
       "description": "Master the art of emotional intelligence, including self-awareness, empathy, and relationship management. Learn to navigate workplace dynamics and build stronger professional relationships.",
@@ -294,7 +294,7 @@
           "title": "Understanding Self-Awareness",
           "completed": false,
           "duration": "25 min",
-          "videoUrl": "/videos/ei/self-awareness.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Self-Assessment Tool", "Reflection Exercises"],
           "hasQuiz": true
         },
@@ -303,7 +303,7 @@
           "title": "Developing Empathy",
           "completed": false,
           "duration": "30 min",
-          "videoUrl": "/videos/ei/empathy.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Empathy Scenarios", "Practice Guide"],
           "hasQuiz": true
         },
@@ -312,7 +312,7 @@
           "title": "Relationship Management",
           "completed": false,
           "duration": "35 min",
-          "videoUrl": "/videos/ei/relationships.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Relationship Building Tools", "Case Studies"],
           "hasQuiz": true
         }
@@ -333,13 +333,13 @@
     {
       "id": "7",
       "title": "Effective Time Management",
-      "avatar": "https://picsum.photos/200",
+      "avatar": "https://loremflickr.com/200/200?random",
       "status": "not_started",
       "category": "Productivity",
       "author": {
         "name": "Michael Roberts",
         "role": "Productivity Expert",
-        "avatar": "https://picsum.photos/200"
+        "avatar": "https://loremflickr.com/200/200?random"
       },
       "progress": 0,
       "description": "Discover practical strategies for prioritizing tasks, managing deadlines, and increasing productivity. Learn to balance multiple responsibilities while maintaining work-life harmony.",
@@ -349,7 +349,7 @@
           "title": "Prioritization Techniques",
           "completed": false,
           "duration": "20 min",
-          "videoUrl": "/videos/time/prioritization.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Priority Matrix Template", "Task List Templates"],
           "hasQuiz": true
         },
@@ -358,7 +358,7 @@
           "title": "Deadline Management",
           "completed": false,
           "duration": "25 min",
-          "videoUrl": "/videos/time/deadlines.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Time Blocking Guide", "Project Timeline Templates"],
           "hasQuiz": true
         },
@@ -367,7 +367,7 @@
           "title": "Work-Life Balance",
           "completed": false,
           "duration": "30 min",
-          "videoUrl": "/videos/time/balance.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Balance Assessment", "Weekly Planner"],
           "hasQuiz": true
         }
@@ -388,13 +388,13 @@
     {
       "id": "8",
       "title": "Conflict Resolution Strategies",
-      "avatar": "https://picsum.photos/200",
+      "avatar": "https://loremflickr.com/200/200?random",
       "status": "not_started",
       "category": "Communication",
       "author": {
         "name": "Dr. Lisa Kumar",
         "role": "Conflict Resolution Specialist",
-        "avatar": "https://picsum.photos/200"
+        "avatar": "https://loremflickr.com/200/200?random"
       },
       "progress": 0,
       "description": "Learn proven techniques for managing and resolving workplace conflicts. Develop skills in negotiation, mediation, and creating win-win solutions in challenging situations.",
@@ -404,7 +404,7 @@
           "title": "Understanding Conflict Types",
           "completed": false,
           "duration": "25 min",
-          "videoUrl": "/videos/conflict/types.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Conflict Analysis Framework", "Case Examples"],
           "hasQuiz": true
         },
@@ -413,7 +413,7 @@
           "title": "Negotiation Skills",
           "completed": false,
           "duration": "35 min",
-          "videoUrl": "/videos/conflict/negotiation.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Negotiation Checklist", "Practice Scenarios"],
           "hasQuiz": true
         },
@@ -422,7 +422,7 @@
           "title": "Mediation Techniques",
           "completed": false,
           "duration": "30 min",
-          "videoUrl": "/videos/conflict/mediation.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Mediation Guide", "Role-Play Exercises"],
           "hasQuiz": true
         }
@@ -443,13 +443,13 @@
     {
       "id": "9",
       "title": "Critical Thinking and Problem Solving",
-      "avatar": "https://picsum.photos/200",
+      "avatar": "https://loremflickr.com/200/200?random",
       "status": "not_started",
       "category": "Analytical Skills",
       "author": {
         "name": "Prof. James Martinez",
         "role": "Analytics Department",
-        "avatar": "https://picsum.photos/200"
+        "avatar": "https://loremflickr.com/200/200?random"
       },
       "progress": 0,
       "description": "Enhance your analytical and problem-solving capabilities through structured thinking frameworks. Learn to approach challenges systematically and make well-reasoned decisions.",
@@ -459,7 +459,7 @@
           "title": "Analytical Thinking Framework",
           "completed": false,
           "duration": "30 min",
-          "videoUrl": "/videos/critical/framework.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Analysis Templates", "Practice Problems"],
           "hasQuiz": true
         },
@@ -468,7 +468,7 @@
           "title": "Problem-Solving Methods",
           "completed": false,
           "duration": "35 min",
-          "videoUrl": "/videos/critical/problem-solving.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Method Guide", "Case Studies"],
           "hasQuiz": true
         },
@@ -477,7 +477,7 @@
           "title": "Decision-Making Techniques",
           "completed": false,
           "duration": "25 min",
-          "videoUrl": "/videos/critical/decision.mp4",
+          "videoUrl": "https://youtu.be/DwwBZn5duk8?si=a1lbmGySCRaakRnf",
           "resources": ["Decision Matrix", "Scenario Exercises"],
           "hasQuiz": true
         }

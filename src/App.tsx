@@ -19,6 +19,8 @@ import ChatInterface from "./pages/employee/voice-model";
 import ConversationReport from "./pages/employee/conversation-report";
 import { HRLayout } from "./layouts/hr-layout";
 import { RhetoricaProvider } from "@/contexts/rhetorica-context";
+import { RhetoricaReport } from "@/pages/rhetorica-report";
+import { CreateCoursePage } from "./pages/hr/create-course";
 
 export default function App() {
   return (
@@ -29,6 +31,8 @@ export default function App() {
             {/* Public Routes */}
             <Route path="/login" element={<Login />} />
             <Route path="/rhetorica-test" element={<RhetoricaTest />} />
+            <Route path="/rhetorica/test" element={<RhetoricaTest />} />
+            <Route path="/rhetorica/report" element={<RhetoricaReport />} />
             
             {/* HR Routes */}
             <Route path="/hr/*" element={
@@ -39,6 +43,7 @@ export default function App() {
                     <Route path="employees" element={<EmployeesPage />} />
                     <Route path="employees/:employeeId" element={<EmployeeDetails />} />
                     <Route path="courses" element={<CoursesPage />} />
+                    <Route path="courses/create" element={<CreateCoursePage />} />
                     <Route path="courses/:courseId" element={<HRCourseDetails />} />
                     <Route path="reports" element={<ReportsPage />} />
                     <Route path="reports/:empId/:testDate" element={<ReportDetails />} />

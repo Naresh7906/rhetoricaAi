@@ -4,13 +4,18 @@ import { createContext, useContext, useState, ReactNode } from "react";
 interface BaseAnswer {
   questionType: string;
   timestamp: number;
+  scores?: {
+    pronunciation?: number;
+    fluency?: number;
+    transcript?: string;
+  };
 }
 
 interface EvaluationScores {
   pronunciation?: number;
   fluency?: number;
-  completeness?: number;
   accuracy?: number;
+  phonetic?: number;
   transcript?: string;
 }
 

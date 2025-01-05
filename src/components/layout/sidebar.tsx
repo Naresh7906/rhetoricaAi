@@ -23,7 +23,7 @@ export function Sidebar() {
         <div className="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center font-bold">
           R
         </div>
-        <span className="text-xl font-semibold">Rhetorica.AI</span>
+        <span className="text-xl font-semibold">Rhetorica</span>
       </div>
 
       <div className="space-y-2">

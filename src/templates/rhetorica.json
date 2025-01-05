@@ -22,12 +22,12 @@
       "questions": [
         {
           "type": "Repeat Sentence",
-          "audio": "/audio/rhetorica/repeat1.mp3",
+          "audio": "https://rhetoricastorage.blob.core.windows.net/rhetorica-blob/rhetorica-test-audio/B-1.mp3",
           "solution": "The local community has organized several events to promote cultural diversity."
         },
         {
           "type": "Repeat Sentence",
-          "audio": "/audio/rhetorica/repeat2.mp3",
+          "audio": "https://rhetoricastorage.blob.core.windows.net/rhetorica-blob/rhetorica-test-audio/B-2.mp3",
           "solution": "The research team discovered a breakthrough in renewable energy technology."
         }
       ]
@@ -39,7 +39,7 @@
       "questions": [
         {
           "type": "Short Answer",
-          "audio": "/audio/rhetorica/short1.mp3",
+          "audio": "https://rhetoricastorage.blob.core.windows.net/rhetorica-blob/rhetorica-test-audio/C-1.mp3",
           "text": "What would you do if you found a lost wallet on the street?"
         }
       ]
@@ -68,7 +68,7 @@
       "questions": [
         {
           "type": "Story Retell",
-          "audio": "/audio/rhetorica/story1.mp3",
+          "audio": "https://rhetoricastorage.blob.core.windows.net/rhetorica-blob/rhetorica-test-audio/E-1.mp3",
           "text": "Listen to a short story about a community project..."
         }
       ]
@@ -95,7 +95,7 @@
       "questions": [
         {
           "type": "Situation Response",
-          "audio": "/audio/rhetorica/situation1.mp3",
+          "audio": "https://rhetoricastorage.blob.core.windows.net/rhetorica-blob/rhetorica-test-audio/G-1.mp3",
           "text": "Your colleague seems stressed about an upcoming presentation. What would you say?"
         }
       ]
@@ -107,13 +107,13 @@
       "questions": [
         {
           "type": "Sentence Completion",
-          "audio": "/audio/rhetorica/complete1.mp3",
+          "audio": "https://rhetoricastorage.blob.core.windows.net/rhetorica-blob/rhetorica-test-audio/H-1.mp3",
           "text": "The weather forecast predicts heavy...",
           "solution": "rain/rainfall/storms/precipitation"
         },
         {
           "type": "Sentence Completion",
-          "audio": "/audio/rhetorica/complete2.mp3",
+          "audio": "https://rhetoricastorage.blob.core.windows.net/rhetorica-blob/rhetorica-test-audio/H-2.mp3",
           "text": "Before leaving for work, she always...",
           "solution": "checks her email/has breakfast/locks the door"
         }

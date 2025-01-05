@@ -10,6 +10,7 @@ import {
   Clock,
   BookOpen,
   User,
+  Plus,
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
@@ -147,6 +148,15 @@ export function CoursesPage() {
             ))}
           </div>
         </div>
+        
+        {/* Add Create Course Button */}
+        <Button
+          onClick={() => navigate('/hr/courses/create')}
+          className="flex items-center gap-2"
+        >
+          <Plus className="h-4 w-4" />
+          Create Course
+        </Button>
       </div>
 
       {/* Courses Table */}

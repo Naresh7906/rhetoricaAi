@@ -1,5 +1,6 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { ThemeToggle } from "@/components/theme-toggle";
+import YouTube from 'react-youtube';
 import {
   ChevronRight,
   Home,
@@ -23,6 +24,12 @@ import { useEffect, useState } from "react";
 import type { Course } from "@/services/courseService";
 import type { AllCourse } from "@/services/allCoursesService";
 import { CourseDetailsSkeleton } from "@/components/skeletons/course-details-skeleton";
+
+// Utility function to extract YouTube video ID
+const getYouTubeVideoId = (url: string) => {
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/);
+  return match ? match[1] : null;
+};
 
 export function CourseDetails() {
   const navigate = useNavigate();
@@ -125,16 +132,32 @@ export function CourseDetails() {
               {/* Course Overview */}
               <Card className="p-8">
                 <div className="aspect-video bg-muted rounded-lg mb-6 relative overflow-hidden">
-                  <img 
-                    src={allCourse.avatar} 
-                    alt={allCourse.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                    <Button size="lg" className="gap-2" onClick={handleEnrollCourse}>
-                      <BookOpen className="w-5 h-5" /> Enroll Now
-                    </Button>
-                  </div>
+                  {allCourse.chapters[0]?.videoUrl && getYouTubeVideoId(allCourse.chapters[0].videoUrl) ? (
+                    <YouTube
+                      videoId={getYouTubeVideoId(allCourse.chapters[0].videoUrl)!}
+                      opts={{
+                        width: '100%',
+                        height: '100%',
+                        playerVars: {
+                          autoplay: 0,
+                        },
+                      }}
+                      className="w-full aspect-video"
+                    />
+                  ) : (
+                    <>
+                      <img 
+                        src={allCourse.avatar} 
+                        alt={allCourse.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                        <Button size="lg" className="gap-2" onClick={handleEnrollCourse}>
+                          <BookOpen className="w-5 h-5" /> Enroll Now
+                        </Button>
+                      </div>
+                    </>
+                  )}
                 </div>
                 <h2 className="text-2xl font-semibold mb-4">Course Overview</h2>
                 <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
@@ -285,10 +308,26 @@ export function CourseDetails() {
               {/* Current Chapter */}
               {currentChapter && (
                 <Card className="p-8">
-                  <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
-                    <Button size="lg" className="gap-2">
-                      <Play className="w-5 h-5" /> Continue Learning
-                    </Button>
+                  <div className="aspect-video bg-muted rounded-lg mb-6 overflow-hidden">
+                    {currentChapter.videoUrl && getYouTubeVideoId(currentChapter.videoUrl) ? (
+                      <YouTube
+                        videoId={getYouTubeVideoId(currentChapter.videoUrl)!}
+                        opts={{
+                          width: '100%',
+                          height: '100%',
+                          playerVars: {
+                            autoplay: 0,
+                          },
+                        }}
+                        className="w-full aspect-video"
+                      />
+                    ) : (
+                      <div className="flex items-center justify-center h-full">
+                        <Button size="lg" className="gap-2">
+                          <Play className="w-5 h-5" /> Continue Learning
+                        </Button>
+                      </div>
+                    )}
                   </div>
                   <h2 className="text-2xl font-semibold mb-4">
                     Chapter {currentChapter.id}: {currentChapter.title}
@@ -306,14 +345,6 @@ export function CourseDetails() {
                           <Star className="w-4 h-4" /> Quiz
                         </Button>
                       )}
-                      <Button 
-                        variant="default" 
-                        size="lg" 
-                        className="gap-2 bg-purple-600 hover:bg-purple-700"
-                        onClick={handleStartTest}
-                      >
-                        <Mic className="w-4 h-4" /> Start Voice Test
-                      </Button>
                     </div>
                     <div className="text-sm text-muted-foreground">
                       Duration: {currentChapter.duration}
@@ -374,6 +405,7 @@ export function CourseDetails() {
                           ? 'bg-purple-100 text-purple-600 dark:bg-purple-950/30' 
                           : 'hover:bg-muted/50 cursor-pointer'
                       }`}
+                      onClick={() => setCurrentChapter(chapter)}
                     >
                       {chapter.completed ? (
                         <div className="w-6 h-6 rounded-full bg-purple-600 text-white flex items-center justify-center">
@@ -399,6 +431,25 @@ export function CourseDetails() {
                   ))}
                 </div>
               </Card>
+
+              {/* Simulation Button */}
+              {course.category === "Leadership" && (
+                <Card className="p-6">
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold">Practice Your Skills</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Test your leadership skills in a simulated scenario.
+                    </p>
+                    <Button 
+                      className="w-full bg-purple-600 hover:bg-purple-700 gap-2" 
+                      size="lg"
+                      onClick={handleStartTest}
+                    >
+                      <Mic className="w-4 h-4" /> Simulate Scenario
+                    </Button>
+                  </div>
+                </Card>
+              )}
             </div>
           </div>
         </div>

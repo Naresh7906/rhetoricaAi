@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Mic, PlayCircle, StopCircle, Volume2 } from "lucide-react";
+import { Mic, Square, Play } from "lucide-react";
+import { SpeechEvaluationService } from "@/services/speechEvaluationService";
 
 interface RepeatSentenceQuestionProps {
   audio: string;
@@ -11,6 +12,8 @@ interface RepeatSentenceQuestionProps {
   onRecord: () => void;
   onPlayComplete: () => void;
   timeLeft: number;
+  onEvaluationComplete: (scores: { pronunciation: number; fluency: number; transcript: string }) => void;
+  recordedBlob?: Blob;
 }
 
 export function RepeatSentenceQuestion({
@@ -21,10 +24,44 @@ export function RepeatSentenceQuestion({
   onRecord,
   onPlayComplete,
   timeLeft,
+  onEvaluationComplete,
+  recordedBlob
 }: RepeatSentenceQuestionProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const speechEvaluationService = new SpeechEvaluationService();
 
-  const handlePlayAudio = () => {
+  useEffect(() => {
+    if (recordedBlob) {
+      handleEvaluation();
+    }
+  }, [recordedBlob]);
+
+  const handleEvaluation = async () => {
+    if (!recordedBlob) return;
+
+    try {
+      console.log("Starting repeat sentence evaluation:", {
+        blobSize: recordedBlob.size,
+        blobType: recordedBlob.type,
+        referenceText: solution
+      });
+
+      const scores = await speechEvaluationService.evaluateReading(recordedBlob, solution);
+
+      console.log("Repeat sentence evaluation completed:", {
+        scores,
+        referenceText: solution
+      });
+
+      // Wait for a moment to ensure the context is updated
+      await new Promise(resolve => setTimeout(resolve, 100));
+      onEvaluationComplete(scores);
+    } catch (error) {
+      console.error("Error evaluating repeat sentence:", error);
+    }
+  };
+
+  const handlePlay = () => {
     if (audioRef.current) {
       audioRef.current.play();
     }
@@ -32,54 +69,45 @@ export function RepeatSentenceQuestion({
 
   return (
     <div className="space-y-6">
-      {/* Audio playback */}
-      <Button
-        variant="outline"
-        className="w-full h-20 text-lg hover:bg-purple-500/5"
-        onClick={handlePlayAudio}
-        disabled={isPlaying || isRecording}
-      >
-        {isPlaying ? (
-          <>
-            <Volume2 className="w-8 h-8 text-purple-500 animate-pulse mr-3" />
-            <span>Playing Audio...</span>
-          </>
-        ) : (
-          <>
-            <PlayCircle className="w-8 h-8 text-purple-500 mr-3" />
-            <span>Play Audio</span>
-          </>
-        )}
-      </Button>
+      <div className="space-y-2">
+        <h3 className="text-lg font-semibold">Listen and repeat the sentence</h3>
+        <p className="text-sm text-muted-foreground">
+          Click play to hear the sentence, then record yourself repeating it
+        </p>
+      </div>
+
       <audio
         ref={audioRef}
         src={audio}
         onEnded={onPlayComplete}
-        className="hidden"
+        className="w-full"
       />
 
-      {/* Recording section */}
-      <div className="flex flex-col items-center gap-4">
-        <p className="text-muted-foreground text-lg text-center">
-          Listen to the sentence, then click Record to repeat it
-        </p>
+      <div className="flex justify-center gap-4">
         <Button
-          className={`h-16 text-lg ${
-            isRecording
-              ? "bg-red-500 hover:bg-red-600"
-              : "bg-purple-600 hover:bg-purple-700"
-          } text-white transition-colors`}
+          variant="outline"
+          size="lg"
+          onClick={handlePlay}
+          disabled={isRecording}
+        >
+          <Play className="w-5 h-5 mr-2" />
+          Play Audio
+        </Button>
+
+        <Button
+          variant={isRecording ? "destructive" : "default"}
+          size="lg"
           onClick={onRecord}
           disabled={isPlaying}
         >
           {isRecording ? (
             <>
-              <StopCircle className="w-6 h-6 mr-2" />
+              <Square className="w-5 h-5 mr-2" />
               Stop Recording ({timeLeft}s)
             </>
           ) : (
             <>
-              <Mic className="w-6 h-6 mr-2" />
+              <Mic className="w-5 h-5 mr-2" />
               Start Recording
             </>
           )}

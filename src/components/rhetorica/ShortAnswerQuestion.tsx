@@ -1,6 +1,7 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Mic, PlayCircle, StopCircle, Volume2 } from "lucide-react";
+import { Mic, Square, Play } from "lucide-react";
+import { SpeechEvaluationService } from "@/services/speechEvaluationService";
 
 interface ShortAnswerQuestionProps {
   audio: string;
@@ -10,6 +11,8 @@ interface ShortAnswerQuestionProps {
   onRecord: () => void;
   onPlayComplete: () => void;
   timeLeft: number;
+  onEvaluationComplete: (scores: { pronunciation: number; fluency: number; transcript: string }) => void;
+  recordedBlob?: Blob;
 }
 
 export function ShortAnswerQuestion({
@@ -20,10 +23,40 @@ export function ShortAnswerQuestion({
   onRecord,
   onPlayComplete,
   timeLeft,
+  onEvaluationComplete,
+  recordedBlob
 }: ShortAnswerQuestionProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const speechEvaluationService = new SpeechEvaluationService();
 
-  const handlePlayAudio = () => {
+  useEffect(() => {
+    if (recordedBlob) {
+      handleEvaluation();
+    }
+  }, [recordedBlob]);
+
+  const handleEvaluation = async () => {
+    if (!recordedBlob) return;
+
+    try {
+      console.log("Starting short answer evaluation:", {
+        blobSize: recordedBlob.size,
+        blobType: recordedBlob.type
+      });
+
+      const scores = await speechEvaluationService.evaluateOpenEndedSpeech(recordedBlob);
+
+      console.log("Short answer evaluation completed:", {
+        scores
+      });
+
+      onEvaluationComplete(scores);
+    } catch (error) {
+      console.error("Error evaluating short answer:", error);
+    }
+  };
+
+  const handlePlay = () => {
     if (audioRef.current) {
       audioRef.current.play();
     }
@@ -31,59 +64,43 @@ export function ShortAnswerQuestion({
 
   return (
     <div className="space-y-6">
-      {/* Audio playback */}
-      <Button
-        variant="outline"
-        className="w-full h-20 text-lg hover:bg-purple-500/5"
-        onClick={handlePlayAudio}
-        disabled={isPlaying || isRecording}
-      >
-        {isPlaying ? (
-          <>
-            <Volume2 className="w-8 h-8 text-purple-500 animate-pulse mr-3" />
-            <span>Playing Audio...</span>
-          </>
-        ) : (
-          <>
-            <PlayCircle className="w-8 h-8 text-purple-500 mr-3" />
-            <span>Play Audio</span>
-          </>
-        )}
-      </Button>
+      <div className="space-y-2">
+        <h3 className="text-lg font-semibold">Listen and answer the question</h3>
+        <p className="text-sm text-muted-foreground">{text}</p>
+      </div>
+
       <audio
         ref={audioRef}
         src={audio}
         onEnded={onPlayComplete}
-        className="hidden"
+        className="w-full"
       />
 
-      {/* Question text */}
-      <div className="text-xl leading-relaxed text-center">
-        {text}
-      </div>
-
-      {/* Recording section */}
-      <div className="flex flex-col items-center gap-4">
-        <p className="text-muted-foreground text-lg text-center">
-          Listen to the question, then click Record to give your answer
-        </p>
+      <div className="flex justify-center gap-4">
         <Button
-          className={`h-16 text-lg ${
-            isRecording
-              ? "bg-red-500 hover:bg-red-600"
-              : "bg-purple-600 hover:bg-purple-700"
-          } text-white transition-colors`}
+          variant="outline"
+          size="lg"
+          onClick={handlePlay}
+          disabled={isRecording}
+        >
+          <Play className="w-5 h-5 mr-2" />
+          Play Audio
+        </Button>
+
+        <Button
+          variant={isRecording ? "destructive" : "default"}
+          size="lg"
           onClick={onRecord}
           disabled={isPlaying}
         >
           {isRecording ? (
             <>
-              <StopCircle className="w-6 h-6 mr-2" />
+              <Square className="w-5 h-5 mr-2" />
               Stop Recording ({timeLeft}s)
             </>
           ) : (
             <>
-              <Mic className="w-6 h-6 mr-2" />
+              <Mic className="w-5 h-5 mr-2" />
               Start Recording
             </>
           )}

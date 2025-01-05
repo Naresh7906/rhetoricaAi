@@ -24,6 +24,7 @@ import { useEffect, useState } from "react";
 import type { Course } from "@/services/courseService";
 import type { AllCourse } from "@/services/allCoursesService";
 import { CourseDetailsSkeleton } from "@/components/skeletons/course-details-skeleton";
+import { RhetoricaChatPopup } from "@/components/rhetorica/RhetoricaChatPopup";
 
 // Utility function to extract YouTube video ID
 const getYouTubeVideoId = (url: string) => {
@@ -262,6 +263,7 @@ export function CourseDetails() {
             </div>
           </div>
         </div>
+        <RhetoricaChatPopup allCourse={allCourse} />
       </div>
     );
   }
@@ -453,6 +455,7 @@ export function CourseDetails() {
             </div>
           </div>
         </div>
+        <RhetoricaChatPopup course={course} />
       </div>
     );
   }

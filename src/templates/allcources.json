@@ -3,12 +3,12 @@
         {
             "id": "10",
             "title": "Vocabulary : Advanced",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=1",
             "category": "Vocabulary",
             "author": {
                 "name": "Dr. Sarah Chen",
                 "role": "Language Department",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=1"
             },
             "description": "Learn advanced vocabulary concepts including word families, common prefixes and suffixes, and essential everyday terms. This course builds a strong foundation for effective communication.",
             "chapters": [
@@ -62,12 +62,12 @@
         {
             "id": "11",
             "title": "Effective Communication Skills",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=1",
             "category": "Communication",
             "author": {
                 "name": "Prof. Michael Roberts",
                 "role": "Communications Expert",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=2"
             },
             "description": "Master the art of clear and impactful communication in professional settings. Learn active listening, nonverbal communication, and presentation skills.",
             "chapters": [
@@ -99,12 +99,12 @@
         {
             "id": "12",
             "title": "Emotional Intelligence at Work",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=3",
             "category": "Leadership",
             "author": {
                 "name": "Dr. Emily Watson",
                 "role": "Organizational Psychologist",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=4"
             },
             "description": "Develop your emotional intelligence to better understand and manage emotions, build stronger relationships, and navigate workplace dynamics.",
             "chapters": [
@@ -125,12 +125,12 @@
         {
             "id": "13",
             "title": "Time Management Mastery",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=5",
             "category": "Productivity",
             "author": {
                 "name": "Dr. James Miller",
                 "role": "Productivity Consultant",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=6"
             },
             "description": "Learn essential time management techniques to boost productivity, reduce stress, and achieve better work-life balance. Master prioritization, planning, and delegation skills.",
             "chapters": [
@@ -162,12 +162,12 @@
         {
             "id": "14",
             "title": "Conflict Resolution in the Workplace",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=7",
             "category": "Professional Development",
             "author": {
                 "name": "Dr. Lisa Thompson",
                 "role": "Workplace Mediator",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=8"
             },
             "description": "Develop skills to effectively manage and resolve workplace conflicts. Learn mediation techniques, difficult conversations, and conflict prevention strategies.",
             "chapters": [
@@ -199,12 +199,12 @@
         {
             "id": "15",
             "title": "Team Collaboration Essentials",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=0",
             "category": "Teamwork",
             "author": {
                 "name": "Prof. David Chen",
                 "role": "Team Development Specialist",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=10"
             },
             "description": "Learn to work effectively in teams, foster collaboration, and achieve collective goals. Master group dynamics, team communication, and collaborative problem-solving.",
             "chapters": [
@@ -225,12 +225,12 @@
         {
             "id": "16",
             "title": "Leadership Fundamentals",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=11",
             "category": "Leadership",
             "author": {
                 "name": "Dr. Robert Martinez",
                 "role": "Leadership Coach",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=12"
             },
             "description": "Develop core leadership skills including vision-setting, motivation, delegation, and team empowerment. Learn different leadership styles and when to apply them.",
             "chapters": [
@@ -251,12 +251,12 @@
         {
             "id": "17",
             "title": "Critical Thinking and Analysis",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=13",
             "category": "Professional Development",
             "author": {
                 "name": "Dr. Sarah Williams",
                 "role": "Critical Thinking Expert",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=14"
             },
             "description": "Enhance your analytical and critical thinking abilities. Learn structured approaches to problem-solving, decision-making, and logical reasoning.",
             "chapters": [
@@ -277,12 +277,12 @@
         {
             "id": "18",
             "title": "Advanced Problem-Solving Techniques",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=15",
             "category": "Professional Development",
             "author": {
                 "name": "Dr. Alan Parker",
                 "role": "Strategic Problem-Solving Expert",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=16"
             },
             "description": "Master advanced problem-solving methodologies including root cause analysis, design thinking, and systematic innovation techniques for complex business challenges.",
             "chapters": [
@@ -314,12 +314,12 @@
         {
             "id": "19",
             "title": "Mastering Workplace Adaptability",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=17",
             "category": "Professional Development",
             "author": {
                 "name": "Dr. Rachel Chang",
                 "role": "Change Management Specialist",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=18"
             },
             "description": "Develop the skills to thrive in rapidly changing environments. Learn to embrace change, build resilience, and maintain productivity during transitions.",
             "chapters": [
@@ -340,12 +340,12 @@
         {
             "id": "20",
             "title": "Professional Negotiation Skills",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=1",
             "category": "Business Skills",
             "author": {
                 "name": "Prof. Daniel Foster",
                 "role": "Negotiation Expert",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=1"
             },
             "description": "Learn proven negotiation strategies for business success. Master the art of win-win negotiations, understanding leverage, and building lasting agreements.",
             "chapters": [
@@ -366,12 +366,12 @@
         {
             "id": "21",
             "title": "Public Speaking Mastery",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=19",
             "category": "Communication",
             "author": {
                 "name": "Dr. Victoria Reynolds",
                 "role": "Public Speaking Coach",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=20"
             },
             "description": "Transform your public speaking abilities. Learn to deliver powerful presentations, handle Q&A sessions, and connect with any audience.",
             "chapters": [
@@ -392,12 +392,12 @@
         {
             "id": "22",
             "title": "Work-Life Balance Strategies",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=21",
             "category": "Personal Development",
             "author": {
                 "name": "Dr. Maya Patel",
                 "role": "Wellness Consultant",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=22"
             },
             "description": "Discover practical strategies for maintaining a healthy work-life balance. Learn to set boundaries, manage stress, and optimize your time for both professional and personal fulfillment.",
             "chapters": [
@@ -418,12 +418,12 @@
         {
             "id": "23",
             "title": "Strategic Decision Making",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=23",
             "category": "Leadership",
             "author": {
                 "name": "Prof. Thomas Anderson",
                 "role": "Decision Science Expert",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=24"
             },
             "description": "Learn frameworks and techniques for making better decisions in complex business environments. Master risk assessment, stakeholder analysis, and decision modeling.",
             "chapters": [
@@ -444,12 +444,12 @@
         {
             "id": "24",
             "title": "Building Professional Networks",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=25",
             "category": "Career Development",
             "author": {
                 "name": "Dr. Jennifer Liu",
                 "role": "Networking Strategist",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=27"
             },
             "description": "Develop effective networking strategies for career growth. Learn to build and maintain professional relationships, leverage LinkedIn, and create meaningful connections.",
             "chapters": [
@@ -470,12 +470,12 @@
         {
             "id": "25",
             "title": "Personal Branding for Professionals",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=28",
             "category": "Career Development",
             "author": {
                 "name": "Prof. Amanda Brooks",
                 "role": "Personal Brand Strategist",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=29"
             },
             "description": "Create and maintain a strong personal brand that sets you apart in your industry. Learn to communicate your value proposition and build a consistent professional image.",
             "chapters": [
@@ -496,12 +496,12 @@
         {
             "id": "26",
             "title": "Cross-Cultural Communication",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=30",
             "category": "Communication",
             "author": {
                 "name": "Dr. Maria Rodriguez",
                 "role": "Cultural Intelligence Expert",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=31"
             },
             "description": "Develop skills for effective communication across cultural boundaries. Learn to navigate cultural differences, avoid misunderstandings, and build strong international relationships.",
             "chapters": [
@@ -522,12 +522,12 @@
         {
             "id": "27",
             "title": "Mindfulness in the Workplace",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=32",
             "category": "Personal Development",
             "author": {
                 "name": "Dr. Sophie Bennett",
                 "role": "Workplace Wellness Expert",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=33"
             },
             "description": "Learn practical mindfulness techniques to enhance focus, reduce stress, and improve workplace relationships. Develop strategies for maintaining presence and clarity under pressure.",
             "chapters": [
@@ -548,12 +548,12 @@
         {
             "id": "28",
             "title": "Project Management Essentials",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=34",
             "category": "Project Management",
             "author": {
                 "name": "Dr. Mark Stevens",
                 "role": "PMP Certified Trainer",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=35"
             },
             "description": "Master the fundamentals of project management, from planning to execution. Learn to manage timelines, resources, and stakeholders effectively.",
             "chapters": [
@@ -585,12 +585,12 @@
         {
             "id": "29",
             "title": "Business Writing Excellence",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=36",
             "category": "Communication",
             "author": {
                 "name": "Prof. Elizabeth Carter",
                 "role": "Business Communication Expert",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=37"
             },
             "description": "Develop clear, concise, and effective business writing skills. Master email communication, report writing, and professional documentation.",
             "chapters": [
@@ -611,12 +611,12 @@
         {
             "id": "30",
             "title": "Change Management Leadership",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=38",
             "category": "Leadership",
             "author": {
                 "name": "Dr. Richard Hughes",
                 "role": "Change Management Consultant",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=39"
             },
             "description": "Learn to lead organizational change effectively. Master change management frameworks, stakeholder engagement, and resistance management.",
             "chapters": [
@@ -637,12 +637,12 @@
         {
             "id": "31",
             "title": "Creative Problem-Solving Innovation",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=40",
             "category": "Innovation",
             "author": {
                 "name": "Dr. Nina Patel",
                 "role": "Innovation Strategist",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=41"
             },
             "description": "Unlock your creative potential with innovative problem-solving techniques. Learn design thinking, lateral thinking, and breakthrough innovation methods.",
             "chapters": [
@@ -663,12 +663,12 @@
         {
             "id": "32",
             "title": "Customer Service Excellence",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=42",
             "category": "Customer Relations",
             "author": {
                 "name": "Prof. Laura Martinez",
                 "role": "Customer Experience Specialist",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=43"
             },
             "description": "Develop exceptional customer service skills. Learn to handle difficult situations, exceed expectations, and create memorable customer experiences.",
             "chapters": [
@@ -689,12 +689,12 @@
         {
             "id": "33",
             "title": "Strategic Thinking and Planning",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=44",
             "category": "Leadership",
             "author": {
                 "name": "Dr. William Blake",
                 "role": "Strategic Planning Consultant",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=45"
             },
             "description": "Develop strategic thinking capabilities and learn effective planning methodologies. Master strategic analysis, goal setting, and execution planning.",
             "chapters": [
@@ -715,12 +715,12 @@
         {
             "id": "34",
             "title": "Workplace Diversity and Inclusion",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=46",
             "category": "Professional Development",
             "author": {
                 "name": "Dr. Angela Washington",
                 "role": "D&I Consultant",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=47"
             },
             "description": "Learn to create and maintain inclusive workplaces. Understand unconscious bias, cultural competency, and inclusive leadership practices.",
             "chapters": [
@@ -741,12 +741,12 @@
         {
             "id": "35",
             "title": "Professional Presentation Design",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=48",
             "category": "Communication",
             "author": {
                 "name": "Prof. Michael Chen",
                 "role": "Presentation Design Expert",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=49"
             },
             "description": "Master the art of creating compelling business presentations. Learn visual design principles, storytelling techniques, and presentation tools.",
             "chapters": [
@@ -767,12 +767,12 @@
         {
             "id": "36",
             "title": "Stress Management for Professionals",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=50",
             "category": "Personal Development",
             "author": {
                 "name": "Dr. Sarah Cooper",
                 "role": "Workplace Wellness Expert",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=51"
             },
             "description": "Learn effective strategies for managing workplace stress. Master relaxation techniques, cognitive reframing, and sustainable work practices.",
             "chapters": [
@@ -793,12 +793,12 @@
         {
             "id": "37",
             "title": "Growth Mindset Development",
-            "avatar": "https://picsum.photos/200",
+            "avatar": "https://loremflickr.com/200/200?random=52",
             "category": "Personal Development",
             "author": {
                 "name": "Dr. David Foster",
                 "role": "Professional Development Coach",
-                "avatar": "https://picsum.photos/200"
+                "avatar": "https://loremflickr.com/200/200?random=53"
             },
             "description": "Develop a growth mindset for continuous learning and professional development. Learn to embrace challenges, persist through obstacles, and learn from feedback.",
             "chapters": [

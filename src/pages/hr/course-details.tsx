@@ -23,10 +23,15 @@ import {
   Video,
   CheckCircle2,
 } from "lucide-react";
+import { Course } from "@/types/course";
 
-export function HRCourseDetails() {
+interface HRCourseDetailsProps {
+  previewData?: Course;
+}
+
+export function HRCourseDetails({ previewData }: HRCourseDetailsProps) {
   const { courseId } = useParams();
-  const course = allCoursesData.courses.find(c => c.id === courseId);
+  const course = previewData || allCoursesData.courses.find(c => c.id === courseId);
 
   if (!course) {
     return (

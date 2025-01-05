@@ -18,7 +18,7 @@ export function HRLayout({ children }: HRLayoutProps) {
 
   const handleLogout = () => {
     // TODO: Implement actual logout logic
-    navigate("/hr/login");
+    navigate("/login");
   };
 
   return (
